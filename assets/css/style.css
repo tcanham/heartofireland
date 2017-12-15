@@ -1,0 +1,192 @@
+/*global styles*/
+
+*{
+    border:0;
+    margin:0;
+}
+
+.clearfix{
+    clear: both;
+}
+
+body{
+    background: #fffff0;
+    color: #505050;
+    font-family: sans-serif;
+}
+
+#container{
+    max-width:1200px;
+    margin: auto;
+    background:  #2BB049
+}
+
+#page_content{
+    min-height: 600px;
+}
+
+input[type=text],input[type=password],input[type=number]{
+    background-color: #F1C53A;
+    color: #808080;
+    width: 100%;
+    height: 40px;
+    border: 1px solid #808080;
+    box-sizing: border-box;
+}
+input[type=submit]{
+    cursor: pointer;
+    background-color: #F1C53A;
+    color: #808080;
+    width: 100%;
+    height: 40px;
+    border: 1px outset #808080;
+}
+
+/*Header styles*/
+#top_bar{
+    width:100%;
+    height:30px;
+    padding: 5px;
+    box-sizing: border-box;
+    background: #fffff0;
+    color: #2BB049;
+}
+
+.top-bar-phone{
+    float: left;
+    margin-left: 5px;
+}
+
+#banner_div{
+    height: 350px;
+    max-width:1200px;
+    overflow: hidden;
+    background: url(http://heartofireland.com/assets/uploads/banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#banner_div img{
+    display: none;
+}
+
+
+.top-bar-email{
+  float: right;
+}
+
+/*Collapsable nav styles*/
+
+.topnav {
+  overflow: hidden;
+  background-color: #F1C53A;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #606060;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #fffff0;
+  color: #2BB049;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+/*Login page styles*/
+
+/*Profile page styles*/
+
+.profile-main img{
+    float: right;
+}
+
+/* Footer styles*/
+
+footer{
+    background: #F1C53A;
+    padding: 5px;
+}
+
+#login_button{
+    float: right;
+    text-decoration: none;
+}
+
+#login_button:hover {
+  color: #2BB049;
+}
+
+
+/* media queries*/
+
+@media (max-width:425px){
+    #top_bar{
+    width:100%;
+    height:60px;
+    padding: 5px;
+    box-sizing: border-box;
+    background: #fffff0;
+    }
+}
+
+@media (max-width:550px){
+    .top-bar-phone{
+    margin-right: 10px;
+    }
+    .top-bar-email{
+    float: left;
+    margin-left: 5px;
+    }    
+    
+
+}
+
+/*Collapsable nav media styles*/
+
+@media screen and (max-width: 800px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+    
+     #banner_div{
+        height: auto;
+        background: #F1C53A;
+    }
+    #banner_div img{
+            display: block;
+            width: 100%;
+            height: auto;
+    }   
+    
+}
+
+
+
+
+
+/*green:  #2BB049;*/
+/* yelow:#F1C53A;*/
