@@ -8,6 +8,7 @@
     <title>Admin/Dashboard</title> 
     <link href="<?=BASE_URL?>assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?=BASE_URL?>assets/css/admin_styles.css" rel="stylesheet">
+    <script src="//cdn.ckeditor.com/4.8.0/full/ckeditor.js"></script>
   </head>
   <body>
     <header>

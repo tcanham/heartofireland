@@ -17,8 +17,27 @@
           </ul>
         </nav>
         <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
-          <h1>Profiles</h1>
-            <a href="<?=BASE_URL?>admin/add_profile"><button class="add-button">Save Profile</button></a>
+          <h1><?= $page ?></h1>
+                <form action="save_profile" method="post" enctype="multipart/form-data">
+                    <?php echo validation_errors(); ?>
+                    <table>
+                        <tr>
+                            <td>Name:&nbsp;</td><td><input type="text"name="name" id="name"value="<?php echo set_value('name'); ?>"</td>
+                        </tr>
+                        <tr>
+                            <td>Image:&nbsp;</td><td><input type="file" name="fileToUpload" id="fileToUpload"></td>
+                        </tr>  
+                            <td></td><td><textarea name="add_profile_text" id="add_profile_text"><?php echo set_value('add_profile_text'); ?></textarea></td>
+                        <tr>
+                        </tr>
+                        <tr>
+                            <td></td><td><input type="submit" value="Save profile" name="submit"></td>
+                        </tr>   
+                    </table>  
+                </form>
         </main>
       </div>
     </div>
+<script>
+    CKEDITOR.replace(add_profile_text) ;
+</script>
