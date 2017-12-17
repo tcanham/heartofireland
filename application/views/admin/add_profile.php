@@ -19,7 +19,7 @@
         <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
           <h1><?= $page ?></h1>
                 <form action="save_profile" method="post" enctype="multipart/form-data">
-                    <?php echo validation_errors(); ?>
+                    <div class="error-box"><?php echo validation_errors(); ?></div>
                     <table>
                         <tr>
                             <td>Name:&nbsp;</td><td><input type="text"name="name" id="name"value="<?php echo set_value('name'); ?>"</td>

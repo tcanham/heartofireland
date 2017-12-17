@@ -1,5 +1,7 @@
 /*green:  #2BB049;*/
 /* yelow:#F1C53A;*/
+
+/* Misc styles*/
 .top-button{
     float: right;
 }
@@ -19,6 +21,10 @@ input[type=submit]{
     height: 40px;
     border: 1px outset #808080;
 }
+.error-box{
+    color: red;
+}
+
 /*Login page styles*/
 #login_page_content{
     background: #2BB049;

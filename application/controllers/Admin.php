@@ -15,7 +15,7 @@ class Admin extends CI_Controller {
     public function login(){
         $this->load->view('admin/templates/header');
         $this->load->view('admin/templates/login');
-           $this->load->view('admin/templates/footer');
+        $this->load->view('admin/templates/footer');
     }
     
 

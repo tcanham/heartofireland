@@ -29,31 +29,22 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>                     
-                        <td><?= $profiles[0]['id']?></td>                           
-                        <td><?= $profiles[0]['title']?></td>
-                        <td><img src="<?= $profiles[0]['image']?>"></td>                        
-                        <td><?= $profiles[0]['created']?></td>                        
-                        <td><button class="alert alert-primary">View</button></td>
-                        <td><button class="alert alert-success">Edit</button></td>
-                        <td><button class="alert alert-danger">Delete</button></td>
-                    </tr>
-                    <tr>                     
-                        <td><?= $profiles[0]['id']?></td>                           
-                        <td><?= $profiles[0]['title']?></td>
-                        <td><img src="<?= $profiles[0]['image']?>"></td>                        
-                        <td><?= $profiles[0]['created']?></td>                        
-                        <td><button class="alert alert-primary">View</button></td>
-                        <td><button class="alert alert-success">Edit</button></td>
-                        <td><button class="alert alert-danger">Delete</button></td>
-                    </tr>  
+                      <?php foreach($profiles as $profile):?>
+                      <?= 
+                      '<tr><td>'.$profile["id"].'</td>'.
+                      '<td>'.$profile["title"].'</td>'.
+                      '<td><img src='.BASE_URL.'assets/uploads/profile_images/'.$profile["image"].'></td>'.
+                      '<td>'.$profile["created"].'</td>
+                      <td><button class="alert alert-primary">View</button></td>
+                      <td><button class="alert alert-success">Edit</button></td>
+                      <td><button class="alert alert-danger">Delete</button></td></tr>'
+                      ?>
+                      <?php endforeach ?>
                   </tbody> 
             </table> 
         </main>
       </div>
     </div>
-
-
 
 
 
