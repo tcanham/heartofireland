@@ -47,5 +47,5 @@ class Site_functions{
             }
         }
     }
-    
+      
 }

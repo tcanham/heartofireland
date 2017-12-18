@@ -8,6 +8,7 @@ class Profiles_model extends CI_Model {
     //Function to fetch the profiles from the database
     public function get_profiles($slug = FALSE){
         if($slug === FALSE){
+            $this->db->order_by("id", "desc");
             $query = $this->db->get('profiles');
             return $query->result_array();
         }
@@ -22,7 +23,7 @@ class Profiles_model extends CI_Model {
         $data = array(
         'title' => $profile_data['name'],
         'slug'  => $slug,   
-        'text'  => $this->db->escape($profile_data['text']),
+        'text'  => $profile_data['text'],
         'image' => $profile_data['image'],
         );
 

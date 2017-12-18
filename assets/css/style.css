@@ -22,7 +22,8 @@ body{
 }
 
 #page_content{
-    min-height: 600px;
+    
+    padding: 10px;
 }
 
 input[type=text],input[type=password],input[type=number]{
@@ -104,8 +105,30 @@ input[type=submit]{
 
 /*Profile page styles*/
 
-.profile-main img{
+.profile-holder{
+    min-height: 200px;
+    background: #F1C53A;
+    padding: 5px;
+    box-sizing: border-box;
+}
+.profile-holder img{
     float: right;
+    max-width: 200px;
+    height: auto;
+}
+
+.profile-holder h4{
+   margin-bottom: 20px;
+} 
+
+.text-holder{
+    margin-bottom: 20px;
+}
+
+.profile-date{
+    font-style: italic;
+    margin-bottom: 10px;
+    background: #F1C53A;
 }
 
 /* Footer styles*/

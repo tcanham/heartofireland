@@ -38,11 +38,30 @@ class Profiles extends CI_Controller {
             //Get the image name for the database
             $image_name = $this->security->xss_clean($_FILES["fileToUpload"]["name"]);
         }
+        //Check for data
+        if(!isset($name) || !isset($text)){
+           $check = 0; 
+        }else{
+            $check = 1;
+        }
+        
         //Send to the database
+        if($check == TRUE){
         $profile_data = array("name"=>$name,"text"=>$text,"image"=>$image_name);
         $this->load->model('profiles_model');
         $this->profiles_model->add_profile($profile_data);
-        redirect(admin);
+        header('Location:' . BASE_URL . 'profiles');
+        }
      }
+    
+    public function our_animals(){
+        $this->load->model('profiles_model');
+        $data['profiles'] = $this->profiles_model->get_profiles();
+        $data['page'] = 'Our Animals';
+        $this->load->view('templates/header',$data);
+        $this->load->view('our_animals',$data);
+        $this->load->view('templates/footer');   
+    }
+        
     
 }// End of class

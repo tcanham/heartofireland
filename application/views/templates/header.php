@@ -22,7 +22,7 @@
         <div class="clearfix"></div>
         <div class="topnav" id="myTopnav">
             <a href="<?= BASE_URL ?>">Home</a>
-            <a href="<?= BASE_URL ?>profiles">Our Animals</a>
+            <a href="<?= BASE_URL ?>our-animals">Our Animals</a>
             <a href="<?= BASE_URL ?>">Donate</a>
             <a href="<?= BASE_URL ?>">Information</a>
             <a href="<?= BASE_URL ?>">Animal Welfare</a>
