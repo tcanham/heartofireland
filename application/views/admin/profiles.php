@@ -35,8 +35,8 @@
                       '<td>'.$profile["title"].'</td>'.
                       '<td><img src='.BASE_URL.'assets/uploads/profile_images/'.$profile["image"].'></td>'.
                       '<td>'.$profile["created"].'</td>
-                      <td><button class="alert alert-primary">View</button></td>
-                      <td><button class="alert alert-success">Edit</button></td>
+                      <td><a href="profiles/view_profile/'.$profile["slug"].'"><button class="alert alert-primary">View</button></a></td>
+                      <td><a href="profiles/edit_profile/'.$profile["slug"].'"><button class="alert alert-success">Edit</button></a></td>
                       <td><button class="alert alert-danger">Delete</button></td></tr>'
                       ?>
                       <?php endforeach ?>

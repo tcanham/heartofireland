@@ -13,13 +13,14 @@ class Profiles_model extends CI_Model {
             return $query->result_array();
         }
         //Get single profile
-        $query = $this->db->get_where('profiles',array(slug => $slug));
+        $query = $this->db->get_where('profiles',array('slug' => $slug));
         return $query->row_array();
     }
     
     //Function to add a profile to the database
     public function add_profile($profile_data){
         $slug = strtolower($profile_data['name']);
+        $slug = str_replace(' ', '', $slug);
         $data = array(
         'title' => $profile_data['name'],
         'slug'  => $slug,   

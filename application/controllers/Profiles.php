@@ -54,6 +54,32 @@ class Profiles extends CI_Controller {
         }
      }
     
+    public function view_profile($slug = null){
+        $this->load->model('profiles_model');
+        $data['profile'] = $this->profiles_model->get_profiles($slug);
+        //Check if valid page data
+        if(empty($data['profile'])){
+            header('Location:' . BASE_URL . 'profiles');
+        }
+        $data['page'] = $data['profile']['title'];
+        $this->load->view('templates/header',$data);
+        $this->load->view('single_profile',$data);
+        $this->load->view('templates/footer');  
+    }
+    
+    
+        public function edit_profile($slug = null){
+        $this->load->model('profiles_model');
+        $data['profile'] = $this->profiles_model->get_profiles($slug);
+        //Check if valid page data
+        if(empty($data['profile'])){
+            header('Location:' . BASE_URL . 'profiles');
+        }    
+        $data['page'] = $data['profile']['title'];
+        $this->load->view('templates/header',$data);
+        $this->load->view('admin/edit_profile',$data);
+        $this->load->view('templates/footer');  
+    }
     public function our_animals(){
         $this->load->model('profiles_model');
         $data['profiles'] = $this->profiles_model->get_profiles();
