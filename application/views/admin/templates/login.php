@@ -1,12 +1,12 @@
 <div id="login_page_content">
     <div id="login_holder">
-        <form>
+        <form action="login/login_check" method="post">
             <table>
                 <tr>
-                    <td>Email:</td><td><input type=text id="email" name="email"></td>
+                    <td>Username:</td><td><input type=text id="username" name="username"></td>
                 </tr>
                  <tr>
-                    <td>Password:</td><td><input type=password id="pswd" name="pswd"></td>
+                    <td>Password:</td><td><input type=password id="password" name="password"></td>
                 </tr>
                 <tr>
                     <td></td><td><input type="submit" id="submit" value="Login"></td>

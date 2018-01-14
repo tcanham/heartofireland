@@ -6,7 +6,7 @@
               <a class="nav-link active" href="#">Overview <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?= BASE_URL?>profiles">Profiles</a>
+              <a class="nav-link" href="<?= BASE_URL?>admin/users">Users</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Items for sale</a>

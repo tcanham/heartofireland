@@ -22,7 +22,7 @@
                     <div class="error-box"><?php echo validation_errors(); ?></div>
                     <table>
                         <tr>
-                            <td>Name:&nbsp;</td><td><input type="text"name="name" id="name"value="<?php echo set_value('name'); ?>"</td>
+                            <td>Name:&nbsp;</td><td><input type="text"name="name" id="name"value="<?php echo set_value('name'); ?>"></td>
                         </tr>
                         <tr>
                             <td>Image:&nbsp;</td><td><input type="file" name="fileToUpload" id="fileToUpload"></td>

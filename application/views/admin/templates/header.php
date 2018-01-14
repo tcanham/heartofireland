@@ -1,3 +1,8 @@
+<?php 
+if(!isset($_SESSION['user_name'])){
+  header('Location:' . BASE_URL);  
+}
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -26,7 +31,7 @@
               <a class="nav-link" href="<?= BASE_URL?>">Site Home Page</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Log Out</a>
+              <a class="nav-link" href="<?= BASE_URL?>/login/logout">Log Out</a>
             </li>
           </ul>
         </div>
