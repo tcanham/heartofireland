@@ -6,7 +6,7 @@
               <a class="nav-link active" href="#">Overview <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?= BASE_URL?>admin/users">Users</a>
+              <a class="nav-link" href="<?= BASE_URL?>users">Users</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Items for sale</a>
@@ -35,9 +35,9 @@
                       '<td>'.$profile["title"].'</td>'.
                       '<td><img src='.BASE_URL.'assets/uploads/profile_images/'.$profile["image"].'></td>'.
                       '<td>'.$profile["created"].'</td>
-                      <td><a href="profiles/view_profile/'.$profile["slug"].'"><button class="alert alert-primary">View</button></a></td>
+                      <td><a href="profiles/view_profile/'.$profile["slug"].'" target="_blank"><button class="alert alert-primary">View</button></a></td>
                       <td><a href="profiles/edit_profile/'.$profile["slug"].'"><button class="alert alert-success">Edit</button></a></td>
-                      <td><button class="alert alert-danger">Delete</button></td></tr>'
+                      <td><a href="profiles/delete_profile/'.$profile['id'].'"><button class="alert alert-danger">Delete</button></td></tr></a>'
                       ?>
                       <?php endforeach ?>
                   </tbody> 

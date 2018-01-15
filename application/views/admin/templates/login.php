@@ -1,6 +1,7 @@
 <div id="login_page_content">
     <div id="login_holder">
-        <form action="login/login_check" method="post">
+        <div class="error-box"><?php echo validation_errors(); ?></div>
+        <form action="<?=BASE_URL?>login/login_check" method="post">
             <table>
                 <tr>
                     <td>Username:</td><td><input type=text id="username" name="username"></td>

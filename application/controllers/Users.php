@@ -57,4 +57,8 @@ public function index(){
         header('Location:' . BASE_URL . 'users');
         }
      }
+    
+    public function edit_user(){
+        
+    }
 }
