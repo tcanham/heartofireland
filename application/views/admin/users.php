@@ -37,9 +37,8 @@
                       '<td>'.$user["username"].'</td>'.
                       '<td>'.$user["email"].'</td>
                       <td>' .$user["type"]. '</td>
-                      <td><button class="alert alert-primary">View</button></td>
-                      <td><button class="alert alert-success">Edit</button></td>
-                      <td><button class="alert alert-danger">Delete</button></td></tr>'
+                      <td><a href="'.BASE_URL.'users/edit_user/'.$user["username"].'"><button class="alert alert-success">Edit</button></a></td>
+                      <td><a href="'.BASE_URL.'users/check_delete_user/'.$user["id"].'"><button class="alert alert-danger">Delete</button></a></td></tr>'
                       ?>
                       <?php endforeach ?>
                   </tbody> 

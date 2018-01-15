@@ -88,7 +88,6 @@ class Profiles extends CI_Controller {
         $this->form_validation->set_rules('name', 'Name', 'required');
         $this->form_validation->set_rules('add_profile_text', 'Add profile text', 'required');
         if ($this->form_validation->run() == FALSE){
-            $data['page'] = 'Add Profile';
             $this->load->view('admin/templates/header',$data);
             $this->load->view('admin/edit_profile',$data);
             $this->load->view('admin/templates/footer');    

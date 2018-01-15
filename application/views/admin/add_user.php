@@ -1,4 +1,4 @@
-<?php if($_SESSION['level'] =='user') header('Location:' . BASE_URL. 'admin');?>
+<?php if($_SESSION['level'] !='admin') header('Location:' . BASE_URL. 'users');?>
 <div class="container-fluid">
       <div class="row">
         <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
@@ -6,6 +6,9 @@
             <li class="nav-item">
               <a class="nav-link active" href="#">Overview <span class="sr-only">(current)</span></a>
             </li>
+             <li class="nav-item">
+              <a class="nav-link" href="<?= BASE_URL?>users">Users</a>
+            </li>             
             <li class="nav-item">
               <a class="nav-link" href="<?= BASE_URL?>profiles">Profiles</a>
             </li>
@@ -29,7 +32,7 @@
                             <td>Surname:&nbsp;</td><td><input type="text"name="surname" id="surname" value="<?php echo set_value('surname'); ?>"></td>
                         </tr>
                         <tr>
-                            <td>Username:&nbsp;</td><td><input type="text"name="username" id="username" value="<?php echo set_value('surname'); ?>"></td>
+                            <td>Username:&nbsp;</td><td><input type="text"name="username" id="username" value="<?php echo set_value('username'); ?>"></td>
                         </tr>                       
                         <tr>
                             <td>Password:&nbsp;</td><td><input type="text"name="password" id="password"value="<?php echo set_value('password'); ?>"></td>
