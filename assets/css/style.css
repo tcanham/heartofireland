@@ -9,8 +9,6 @@
     clear: both;
 }
 
-
-
 body{
     background: #fffff0;
     color: #505050;
@@ -133,6 +131,19 @@ input[type=submit]{
     background: #F1C53A;
 }
 
+/*Contact page styles*/
+
+#contact_text_holder{
+    float: right;
+    width: 35%;
+    font-size: 1.2em;
+    
+}
+
+#map_holder{
+   width: 60%; 
+}
+
 /* Footer styles*/
 
 footer{
@@ -170,9 +181,21 @@ footer{
     float: left;
     margin-left: 5px;
     }    
-    
-
 }
+
+@media (max-width:900px){
+    #contact_text_holder{
+        float: none;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    #map_holder{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
 
 /*Collapsable nav media styles*/
 
