@@ -14,4 +14,13 @@ class Home extends CI_Controller {
             $this->load->view('templates/footer');
 	}
     
+    public function contact(){
+            $this->load->model('home_model');
+            $data['contact_data'] = $this->home_model->contact_data();
+            $data['page'] = 'Contact us';
+            $this->load->view('templates/header',$data);
+            $this->load->view('contact',$data);
+            $this->load->view('templates/footer');
+    }
+    
 }

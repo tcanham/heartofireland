@@ -7,13 +7,16 @@ public function index(){
         $data['page'] = 'Users';
         $this->load->model('admin/users_model');
         $data['users'] = $this->users_model->get_users();
-        
+        $this->load->model('admin/dashboard_model');
+        $data['admin_links'] = $this->dashboard_model->get_admin_links();
         $this->load->view('admin/templates/header',$data);
         $this->load->view('admin/users',$data);
         $this->load->view('admin/templates/footer');
     }
 
     public function add_user(){
+            $this->load->model('admin/dashboard_model');
+            $data['admin_links'] = $this->dashboard_model->get_admin_links();      
             $data['page'] = 'Add User';
             $this->load->view('admin/templates/header',$data);
             $this->load->view('admin/add_user',$data);
@@ -21,7 +24,7 @@ public function index(){
     }
     
         public function save_user(){
-        
+      
         $this->form_validation->set_rules('first_name', 'First Name', 'required');
         $this->form_validation->set_rules('surname', 'Surname', 'required');
         $this->form_validation->set_rules('username', 'Username', 'required');    
@@ -29,6 +32,8 @@ public function index(){
         $this->form_validation->set_rules('email', 'Email', 'required'); 
         $this->form_validation->set_rules('type', 'User type', 'required');     
         if ($this->form_validation->run() == FALSE){
+            $this->load->model('admin/dashboard_model');
+            $data['admin_links'] = $this->dashboard_model->get_admin_links();
             $data['page'] = 'Add User';
             $this->load->view('admin/templates/header',$data);
             $this->load->view('admin/add_user',$data);
@@ -59,7 +64,8 @@ public function index(){
      }
     
     public function edit_user($id){
-        
+        $this->load->model('admin/dashboard_model');
+        $data['admin_links'] = $this->dashboard_model->get_admin_links();
         $this->load->model('admin/users_model');
         $data['user'] = $this->users_model->get_users($id);
         //Check if valid page data
@@ -85,6 +91,8 @@ public function index(){
         $this->form_validation->set_rules('type', 'User type', 'required'); 
         
         if ($this->form_validation->run() == FALSE){
+            $this->load->model('admin/dashboard_model');
+            $data['admin_links'] = $this->dashboard_model->get_admin_links();
             $this->load->view('admin/templates/header',$data);
             $this->load->view('admin/edit_user',$data);
             $this->load->view('admin/templates/footer');    
@@ -117,6 +125,8 @@ public function index(){
         public function check_delete_user($id){
             $this->load->model('admin/users_model');
             $data['user'] = $this->users_model->check_delete_user($id);
+            $this->load->model('admin/dashboard_model');
+            $data['admin_links'] = $this->dashboard_model->get_admin_links();
             $this->load->view('admin/templates/header');
             $this->load->view('admin/check_delete_user',$data);
             $this->load->view('admin/templates/footer'); 

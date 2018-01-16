@@ -7,13 +7,16 @@ class Profiles extends CI_Controller {
             $data['page'] = 'Profiles';
             $this->load->model('profiles_model');
             $data['profiles'] = $this->profiles_model->get_profiles();
-
+            $this->load->model('admin/dashboard_model');
+            $data['admin_links'] = $this->dashboard_model->get_admin_links();
             $this->load->view('admin/templates/header',$data);
             $this->load->view('admin/profiles',$data);
             $this->load->view('admin/templates/footer');
 	}
         
     public function add_profile(){
+            $this->load->model('admin/dashboard_model');
+            $data['admin_links'] = $this->dashboard_model->get_admin_links();
             $data['page'] = 'Add Profile';
             $this->load->view('admin/templates/header',$data);
             $this->load->view('admin/add_profile',$data);
@@ -25,6 +28,8 @@ class Profiles extends CI_Controller {
         $this->form_validation->set_rules('name', 'Name', 'required');
         $this->form_validation->set_rules('add_profile_text', 'Add profile text', 'required');
         if ($this->form_validation->run() == FALSE){
+            $this->load->model('admin/dashboard_model');
+            $data['admin_links'] = $this->dashboard_model->get_admin_links();
             $data['page'] = 'Add Profile';
             $this->load->view('admin/templates/header',$data);
             $this->load->view('admin/add_profile',$data);
@@ -61,6 +66,8 @@ class Profiles extends CI_Controller {
         if(empty($data['profile'])){
             header('Location:' . BASE_URL . 'profiles');
         }
+        $this->load->model('admin/dashboard_model');
+        $data['admin_links'] = $this->dashboard_model->get_admin_links();
         $data['page'] = $data['profile']['title'];
         $this->load->view('templates/header',$data);
         $this->load->view('single_profile',$data);
@@ -74,7 +81,9 @@ class Profiles extends CI_Controller {
         //Check if valid page data
         if(empty($data['profile'])){
             header('Location:' . BASE_URL . 'profiles');
-        }    
+        } 
+        $this->load->model('admin/dashboard_model');
+        $data['admin_links'] = $this->dashboard_model->get_admin_links();   
         $data['page'] = $data['profile']['title'];
         $this->load->view('admin/templates/header',$data);
         $this->load->view('admin/edit_profile',$data);
@@ -88,6 +97,8 @@ class Profiles extends CI_Controller {
         $this->form_validation->set_rules('name', 'Name', 'required');
         $this->form_validation->set_rules('add_profile_text', 'Add profile text', 'required');
         if ($this->form_validation->run() == FALSE){
+            $this->load->model('admin/dashboard_model');
+            $data['admin_links'] = $this->dashboard_model->get_admin_links();
             $this->load->view('admin/templates/header',$data);
             $this->load->view('admin/edit_profile',$data);
             $this->load->view('admin/templates/footer');    
