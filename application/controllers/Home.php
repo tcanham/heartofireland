@@ -23,4 +23,13 @@ class Home extends CI_Controller {
             $this->load->view('templates/footer');
     }
     
+    public function links(){
+            $this->load->model('admin/links_model');
+            $data['links'] = $this->links_model->get_links();       
+            $data['page'] = 'Useful Links';
+            $this->load->view('templates/header',$data);
+            $this->load->view('links',$data);
+            $this->load->view('templates/footer');        
+    }
+    
 }

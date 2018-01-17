@@ -46,7 +46,7 @@ public function index(){
             $password = password_hash($password, PASSWORD_DEFAULT);
             $email = $this->security->xss_clean($this->input->post('email'));
             $type = $this->security->xss_clean($this->input->post('type'));
-            //Check for username in database
+            //Get user to check for username in database
             $this->load->model('admin/users_model');
             $user = $this->users_model->get_users($username);
         }

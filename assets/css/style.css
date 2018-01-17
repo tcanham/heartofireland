@@ -101,8 +101,6 @@ input[type=submit]{
   display: none;
 }
 
-/*Login page styles*/
-
 /*Profile page styles*/
 
 .profile-holder{
@@ -129,6 +127,16 @@ input[type=submit]{
     font-style: italic;
     margin-bottom: 10px;
     background: #F1C53A;
+}
+
+/*Links page styles*/
+
+.link-holder{
+    min-height: 100px;
+    background: #F1C53A;
+    padding: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
 }
 
 /*Contact page styles*/
@@ -193,6 +201,14 @@ footer{
     #map_holder{
         width: 100%;
         margin-bottom: 20px;
+    }
+    
+    .link-text{
+        float: none;
+    }
+    
+        .link-link{
+        float: none;
     }
 }
 

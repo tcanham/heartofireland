@@ -26,7 +26,7 @@
             <a href="<?= BASE_URL ?>">Donate</a>
             <a href="<?= BASE_URL ?>">Information</a>
             <a href="<?= BASE_URL ?>">Animal Welfare</a>
-            <a href="<?= BASE_URL ?>">Links</a>
+            <a href="<?= BASE_URL ?>home/links">Links</a>
             <a href="<?= BASE_URL ?>contact">Contact</a>
             <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
         </div>
