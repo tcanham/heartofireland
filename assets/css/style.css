@@ -139,6 +139,20 @@ input[type=submit]{
     margin-bottom: 10px;
 }
 
+.links-page-link{
+    margin-bottom: 10px;
+}
+
+.link-holder a{
+    color: #606060;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+.link-holder a:hover {
+  color: #2BB049;
+}
+
 /*Contact page styles*/
 
 #contact_text_holder{
