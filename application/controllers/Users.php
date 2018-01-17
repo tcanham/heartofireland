@@ -24,7 +24,7 @@ public function index(){
     }
     
         public function save_user(){
-      
+ 
         $this->form_validation->set_rules('first_name', 'First Name', 'required');
         $this->form_validation->set_rules('surname', 'Surname', 'required');
         $this->form_validation->set_rules('username', 'Username', 'required');    
@@ -46,16 +46,28 @@ public function index(){
             $password = password_hash($password, PASSWORD_DEFAULT);
             $email = $this->security->xss_clean($this->input->post('email'));
             $type = $this->security->xss_clean($this->input->post('type'));
+            //Check for username in database
+            $this->load->model('admin/users_model');
+            $user = $this->users_model->get_users($username);
         }
-        //Check for data
+        //Check that all required data is present
         if(!isset($first_name) || !isset($surname) || !isset($password) || !isset($email) || !isset($type) || !isset($username)){
            $check = 0; 
         }else{
             $check = 1;
         }
-        
+        //Check if username is in the database   
+        if(isset($user['username']) && $user['username'] !=''){
+            $this->load->model('admin/dashboard_model');
+            $data['admin_links'] = $this->dashboard_model->get_admin_links();
+            $data['page'] = 'Add User';
+            $data['username_error'] = 'Sorry this username is already taken';
+            $this->load->view('admin/templates/header',$data);
+            $this->load->view('admin/add_user',$data);
+            $this->load->view('admin/templates/footer');   
+            }
         //Send to the database
-        if($check == TRUE){
+        elseif($check == TRUE){
         $user_data = array("first_name"=>$first_name,"surname"=>$surname,"username"=>$username,"password"=>$password,"email"=>$email,"type"=>$type);
         $this->load->model('admin/users_model');
         $this->users_model->add_user($user_data);

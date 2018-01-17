@@ -25,7 +25,7 @@
                             <td>Surname:&nbsp;</td><td><input type="text"name="surname" id="surname" value="<?php echo set_value('surname'); ?>"></td>
                         </tr>
                         <tr>
-                            <td>Username:&nbsp;</td><td><input type="text"name="username" id="username" value="<?php echo set_value('username'); ?>"></td>
+                            <td>Username:&nbsp;</td><td><input type="text"name="username" id="username" value="<?php echo set_value('username'); ?>"></td><td><?php if(isset($username_error)) echo $username_error;?></td>
                         </tr>                       
                         <tr>
                             <td>Password:&nbsp;</td><td><input type="text"name="password" id="password"value="<?php echo set_value('password'); ?>"></td>

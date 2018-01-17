@@ -16,7 +16,7 @@ class Home extends CI_Controller {
     
     public function contact(){
             $this->load->model('home_model');
-            $data['contact_data'] = $this->home_model->contact_data();
+            $data['contact_data'] = $this->home_model->contact_page_data();
             $data['page'] = 'Contact us';
             $this->load->view('templates/header',$data);
             $this->load->view('contact',$data);
