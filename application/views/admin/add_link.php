@@ -13,33 +13,29 @@
           </ul>
         </nav>
         <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
-          <h1>Edit <?php echo $profile['title'] ?></h1>
-                <form action="<?= BASE_URL?>profiles/update_profile/<?= $profile['slug']?>" method="post" enctype="multipart/form-data">
+          <h1><?= $page ?></h1>
+                <form action="<?= BASE_URL?>links/save_link" method="post">
                     <div class="error-box"><?php echo validation_errors(); ?></div>
                     <table>
                         <tr>
-                            <td><input type="hidden"name="id" id="name"value="<?php echo $profile['id']; ?>"></td>
-                        </tr>                        
-                        <tr>
-                            <td>Name:&nbsp;</td><td><input type="text"name="name" id="name"value="<?php echo $profile['title']; ?>"></td>
+                            <td>Title:&nbsp;</td><td><input type="text"name="title" id="title"value="<?php echo set_value('title'); ?>"></td>
                         </tr>
                         <tr>
-                            <td>Image:&nbsp;</td><td><input type="file" name="fileToUpload" id="fileToUpload"></td>
+                            <td>Link:&nbsp;</td><td><input type="text"name="link" id="link"value="<?php echo set_value('link'); ?>"></td>
                         </tr>  
+                            <td></td><td><textarea name="add_link_text" id="add_link_text"><?php echo set_value('add_link_text'); ?></textarea></td>
                         <tr>
-                            <td></td><td><textarea name="add_profile_text" id="add_profile_text"><?php echo $profile['text']; ?></textarea></td>
                         </tr>
                         <tr>
-                            <td></td><td><input type="submit" value="Edit profile" name="submit"></td>
+                            <td></td><td><input type="submit" value="Save link" name="submit"></td>
                         </tr>   
                     </table>  
-                </form>
-        </main>
+                </form>        
+            
+          </main>
       </div>
     </div>
+
 <script>
-    CKEDITOR.replace(add_profile_text) ;
+    CKEDITOR.replace(add_link_text) ;
 </script>
-        </main>
-      </div>
-    </div>

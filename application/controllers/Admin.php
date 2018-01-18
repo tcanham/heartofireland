@@ -5,20 +5,22 @@ class Admin extends CI_Controller {
 
 	public function index()
 	{
-            $this->load->model('admin/dashboard_model');
-            $data['admin_links'] = $this->dashboard_model->get_admin_links();
-            $this->load->view('admin/templates/header',$data);
-            $this->load->view('admin/dashboard',$data);
-            $this->load->view('admin/templates/footer');
+        $this->load->model('admin/dashboard_model');
+        $data['admin_links'] = $this->dashboard_model->get_admin_links();
+        $this->load->view('admin/templates/header',$data);
+        $this->load->view('admin/dashboard',$data);
+        $this->load->view('admin/templates/footer');
 	}
     
     public function links(){
-            $this->load->model('admin/dashboard_model');
-            $data['admin_links'] = $this->dashboard_model->get_admin_links();       
-            $data['page'] = 'Links';
-            $this->load->view('admin/templates/header',$data);
-            $this->load->view('admin/links',$data);
-            $this->load->view('admin/templates/footer');        
+        $this->load->model('admin/dashboard_model');
+        $data['admin_links'] = $this->dashboard_model->get_admin_links();
+        $this->load->model('admin/links_model');
+        $data['links'] = $this->links_model->get_links();
+        $data['page'] = 'Links';
+        $this->load->view('admin/templates/header',$data);
+        $this->load->view('admin/links',$data);
+        $this->load->view('admin/templates/footer');        
     }
 }
 

@@ -13,24 +13,24 @@
           </ul>
         </nav>
         <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
-          <h1>Edit <?php echo $profile['title'] ?></h1>
-                <form action="<?= BASE_URL?>profiles/update_profile/<?= $profile['slug']?>" method="post" enctype="multipart/form-data">
+          <h1>Edit <?php echo $page ?></h1>
+                <form action="<?= BASE_URL?>links/update_link/<?= $links['id']?>" method="post" enctype="multipart/form-data">
                     <div class="error-box"><?php echo validation_errors(); ?></div>
                     <table>
                         <tr>
-                            <td><input type="hidden"name="id" id="name"value="<?php echo $profile['id']; ?>"></td>
+                            <td><input type="hidden"name="id" id="id"value="<?php echo $links['id']; ?>"></td>
                         </tr>                        
+                          <tr>
+                            <td>Title:&nbsp;</td><td><input type="text"name="title" id="title"value="<?php echo $links['title']; ?>"></td>
+                        </tr> 
                         <tr>
-                            <td>Name:&nbsp;</td><td><input type="text"name="name" id="name"value="<?php echo $profile['title']; ?>"></td>
+                            <td>Link:&nbsp;</td><td><input type="text"name="link" id="link"value="<?php echo $links['link']; ?>"></td>
+                        </tr> 
+                        <tr>
+                            <td></td><td><textarea name="add_link_text" id="add_link_text"><?php echo $links['text']; ?></textarea></td>
                         </tr>
                         <tr>
-                            <td>Image:&nbsp;</td><td><input type="file" name="fileToUpload" id="fileToUpload"></td>
-                        </tr>  
-                        <tr>
-                            <td></td><td><textarea name="add_profile_text" id="add_profile_text"><?php echo $profile['text']; ?></textarea></td>
-                        </tr>
-                        <tr>
-                            <td></td><td><input type="submit" value="Edit profile" name="submit"></td>
+                            <td></td><td><input type="submit" value="Edit link" name="submit"></td>
                         </tr>   
                     </table>  
                 </form>
@@ -38,7 +38,7 @@
       </div>
     </div>
 <script>
-    CKEDITOR.replace(add_profile_text) ;
+    CKEDITOR.replace(add_link_text) ;
 </script>
         </main>
       </div>
