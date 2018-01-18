@@ -6,9 +6,11 @@
         <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:150px;overflow:hidden;">
             
             <!--Load the images here-->
-            <?php foreach($profiles as $images):?>
+            <?php foreach($profiles as $images):if($images['image'] !=''){?>
+            
             <?php echo '<div data-p="43.75"><a href="'.BASE_URL.'profiles/view_profile/'.$images["slug"].'"><img data-u="image" src='.BASE_URL.'assets/uploads/profile_images/'.$images["image"].' title="'.$images['title'].'"></a></div>'?>
-            <?php endforeach;?>
+            }
+            <?php } endforeach;?>
             
         </div>
         <!-- Bullet Navigator -->

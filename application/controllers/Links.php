@@ -79,7 +79,7 @@ class Links extends CI_Controller {
             $id =  $this->security->xss_clean($this->input->post('id'));
             $title = $this->security->xss_clean($this->input->post('title'));
             $link = $this->security->xss_clean($this->input->post('link'));
-            $text = $this->security->xss_clean($this->input->post('add_link_text'));
+            $text = $this->input->post('add_link_text');
 
         }
         //Check for data

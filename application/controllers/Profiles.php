@@ -128,6 +128,16 @@ class Profiles extends CI_Controller {
         }
     }
     
+    public function check_delete_profile($id){
+        $this->load->model('profiles_model');
+        $data['profile'] = $this->profiles_model->check_delete_profile($id);
+        $this->load->model('admin/dashboard_model');
+        $data['admin_links'] = $this->dashboard_model->get_admin_links();
+        $this->load->view('admin/templates/header');
+        $this->load->view('admin/check_delete_profile',$data);
+        $this->load->view('admin/templates/footer'); 
+    }
+    
     public function delete_profile($id){
         $this->load->model('profiles_model');
         $this->profiles_model->delete_profile($id);

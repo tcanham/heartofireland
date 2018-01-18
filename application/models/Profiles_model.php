@@ -43,7 +43,12 @@ class Profiles_model extends CI_Model {
 
         $this->db->where('id',$profile_data['id']);
         $this->db->update('profiles', $data);
-    }   
+    }  
+    
+    public function check_delete_profile($id){
+            $query = $this->db->get_where('profiles',array("id" => $id));
+            return $query->row_array();
+    }
     
     public function delete_profile($id){
         $this->db->where('id',$id);
