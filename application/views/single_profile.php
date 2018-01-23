@@ -1,7 +1,6 @@
 <div id="page_content">
-    <h3><?= $page?></h3>   
 <?php
-echo '<div class="profile-holder">';  
+echo '<div class="profile-holder-single">';  
 echo '<img src='.BASE_URL.'assets/uploads/profile_images/'.$profile["image"].'>'; 
 echo '<div class="text-holder">';
 echo '<h4>My name is:&nbsp;' . $profile['title'] .'</h4>';   

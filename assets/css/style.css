@@ -10,7 +10,7 @@
 }
 
 body{
-    background: #fffff0;
+    background:  #2BB049;
     color: #505050;
     font-family: sans-serif;
 }
@@ -18,12 +18,11 @@ body{
 #container{
     max-width:1200px;
     margin: auto;
-    background:  #2BB049
+    background: #fffff0;
 }
 
-#page_content{
-    
-    padding: 10px;
+.page-title{
+    margin: 10px 5px;
 }
 
 input[type=text],input[type=password],input[type=number]{
@@ -62,7 +61,7 @@ input[type=submit]{
     height: 350px;
     max-width:1200px;
     overflow: hidden;
-    background: url(http://localhost/heartofireland.com/assets/uploads/banner.jpg);
+    background: url(http://heartofireland.com/assets/uploads/banner.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -89,6 +88,7 @@ input[type=submit]{
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  border: 1px solid #F1C53A;
   font-size: 17px;
 }
 
@@ -101,16 +101,37 @@ input[type=submit]{
   display: none;
 }
 
+/*Home page styles*/
+
+#scroll_holder{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 /*Profile page styles*/
 
 .profile-holder{
     min-height: 200px;
-    background: #F1C53A;
+    border-top: 1px solid #F1C53A;
+    border-left: 1px solid #F1C53A;
+    border-right: 1px solid #F1C53A;
     padding: 5px;
     box-sizing: border-box;
+    margin: 5px;
+}
+
+.profile-holder-single{
+    min-height: 400px;
+    border-top: 1px solid #F1C53A;
+    border-left: 1px solid #F1C53A;
+    border-right: 1px solid #F1C53A;
+    padding: 5px;
+    box-sizing: border-box;
+    margin: 5px;
 }
 .profile-holder img{
-    float: right;
+    float:right;
+    max-height:160px;
     max-width: 200px;
     height: auto;
 }
@@ -125,19 +146,24 @@ input[type=submit]{
 
 .profile-date{
     font-style: italic;
+    margin-left: 5px;
+    margin-right: 5px;
     margin-bottom: 10px;
+    margin-top: -5px;
+    padding: 2px;
     background: #F1C53A;
 }
 
 /*Links page styles*/
 
 .link-holder{
-    min-height: 100px;
-    background: #F1C53A;
-    padding: 5px;
+    min-height: 200px;
+    border: 1px solid #F1C53A;
+    padding:10px  5px;
     box-sizing: border-box;
-    margin-bottom: 10px;
+    margin: 5px;
 }
+
 
 .links-page-link{
     margin-bottom: 10px;
@@ -145,12 +171,16 @@ input[type=submit]{
 
 .link-holder a{
     color: #606060;
+    background-color: #F1C53A;
     font-size: 1.2em;
     text-decoration: none;
+    padding: 4px 6px;
+    border: 1px solid #F1C53A;
 }
 
 .link-holder a:hover {
-  color: #2BB049;
+   background-color: #fffff0;   
+    color: #2BB049;
 }
 
 /*Contact page styles*/
@@ -164,6 +194,7 @@ input[type=submit]{
 
 #map_holder{
    width: 60%; 
+    margin-left: 5px;
 }
 
 /* Footer styles*/
@@ -223,6 +254,10 @@ footer{
     
         .link-link{
         float: none;
+    }
+    
+        .link-holder a{
+		font-size:1.5em;
     }
 }
 

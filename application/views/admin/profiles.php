@@ -13,7 +13,7 @@
           </ul>
         </nav>
         <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
-          <h1>Animal Profiles</h1>
+          <h1 class="page-title">Animal Profiles</h1>
             <a href="<?=BASE_URL?>profiles/add_profile"><button class="alert alert-primary top-button">Add Profile</button></a>
             <table class="table table-responsive">
                 <thead>

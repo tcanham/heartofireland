@@ -1,5 +1,5 @@
 <div id="page_content">
-    <h2><?= $page ?></h2>
+    <h3 class="page-title"><?= $page ?></h3>
         <div id="contact_text_holder">
         <p>Tel: <?=$contact_data['tel'] ?></p>
         <p>Mobile: <?=$contact_data['mob'] ?></p>
