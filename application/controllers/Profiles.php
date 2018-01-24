@@ -9,6 +9,7 @@ class Profiles extends CI_Controller {
             $data['profiles'] = $this->profiles_model->get_profiles();
             $this->load->model('admin/dashboard_model');
             $data['admin_links'] = $this->dashboard_model->get_admin_links();
+            $data['page_list'] = $this->dashboard_model->get_page_list();
             $this->load->view('admin/templates/header',$data);
             $this->load->view('admin/profiles',$data);
             $this->load->view('admin/templates/footer');
@@ -17,7 +18,8 @@ class Profiles extends CI_Controller {
     public function add_profile(){
             $this->load->model('admin/dashboard_model');
             $data['admin_links'] = $this->dashboard_model->get_admin_links();
-            $data['page'] = 'Add Profile';
+            $data['page_list'] = $this->dashboard_model->get_page_list();
+            $data['page_title'] = 'Add Profile';
             $this->load->view('admin/templates/header',$data);
             $this->load->view('admin/add_profile',$data);
             $this->load->view('admin/templates/footer');    
@@ -30,7 +32,8 @@ class Profiles extends CI_Controller {
         if ($this->form_validation->run() == FALSE){
             $this->load->model('admin/dashboard_model');
             $data['admin_links'] = $this->dashboard_model->get_admin_links();
-            $data['page'] = 'Add Profile';
+            $data['page_list'] = $this->dashboard_model->get_page_list();
+            $data['page_title'] = 'Add Profile';
             $this->load->view('admin/templates/header',$data);
             $this->load->view('admin/add_profile',$data);
             $this->load->view('admin/templates/footer');    
@@ -68,7 +71,8 @@ class Profiles extends CI_Controller {
         }
         $this->load->model('admin/dashboard_model');
         $data['admin_links'] = $this->dashboard_model->get_admin_links();
-        $data['page'] = $data['profile']['title'];
+        $data['page_list'] = $this->dashboard_model->get_page_list();
+        $data['page_title'] = $data['profile']['title'];
         $this->load->view('templates/header',$data);
         $this->load->view('single_profile',$data);
         $this->load->view('templates/footer');  
@@ -83,8 +87,9 @@ class Profiles extends CI_Controller {
             header('Location:' . BASE_URL . 'profiles');
         } 
         $this->load->model('admin/dashboard_model');
-        $data['admin_links'] = $this->dashboard_model->get_admin_links();   
-        $data['page'] = $data['profile']['title'];
+        $data['admin_links'] = $this->dashboard_model->get_admin_links();
+        $data['page_list'] = $this->dashboard_model->get_page_list();    
+        $data['page_title'] = $data['profile']['title'];
         $this->load->view('admin/templates/header',$data);
         $this->load->view('admin/edit_profile',$data);
         $this->load->view('admin/templates/footer');  
@@ -99,6 +104,7 @@ class Profiles extends CI_Controller {
         if ($this->form_validation->run() == FALSE){
             $this->load->model('admin/dashboard_model');
             $data['admin_links'] = $this->dashboard_model->get_admin_links();
+            $data['page_list'] = $this->dashboard_model->get_page_list();
             $this->load->view('admin/templates/header',$data);
             $this->load->view('admin/edit_profile',$data);
             $this->load->view('admin/templates/footer');    
@@ -133,6 +139,7 @@ class Profiles extends CI_Controller {
         $data['profile'] = $this->profiles_model->check_delete_profile($id);
         $this->load->model('admin/dashboard_model');
         $data['admin_links'] = $this->dashboard_model->get_admin_links();
+        $data['page_list'] = $this->dashboard_model->get_page_list();
         $this->load->view('admin/templates/header');
         $this->load->view('admin/check_delete_profile',$data);
         $this->load->view('admin/templates/footer'); 
@@ -148,7 +155,7 @@ class Profiles extends CI_Controller {
     public function our_animals(){
         $this->load->model('profiles_model');
         $data['profiles'] = $this->profiles_model->get_profiles();
-        $data['page'] = 'Our Animals';
+        $data['page_title'] = 'Our Animals';
         $this->load->view('templates/header',$data);
         $this->load->view('our_animals',$data);
         $this->load->view('templates/footer');   

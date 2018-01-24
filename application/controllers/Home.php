@@ -31,5 +31,41 @@ class Home extends CI_Controller {
             $this->load->view('links',$data);
             $this->load->view('templates/footer');        
     }
+     
+    public function welfare(){
+            $this->load->model('home_model');
+            $data['welfare_data'] = $this->home_model->welfare_page_data();
+            $data['page_title'] = 'Animal welfare';
+            $this->load->view('templates/header',$data);
+            $this->load->view('welfare',$data);
+            $this->load->view('templates/footer');
+    } 
+    
+    public function info(){
+            $this->load->model('home_model');
+            $data['info_data'] = $this->home_model->info_page_data();
+            $data['page_title'] = 'Useful Information';
+            $this->load->view('templates/header',$data);
+            $this->load->view('info',$data);
+            $this->load->view('templates/footer');
+    } 
+    
+    public function donations(){
+            $this->load->model('home_model');
+            $data['donate_data'] = $this->home_model->donate_page_data();
+            $data['page_title'] = 'Donate';
+            $this->load->view('templates/header',$data);
+            $this->load->view('donations',$data);
+            $this->load->view('templates/footer');
+    } 
+    
+    public function shop(){
+            $this->load->model('home_model');
+            $data['shop_data'] = $this->home_model->shop_page_data();
+            $data['page_title'] = 'Items for sale';
+            $this->load->view('templates/header',$data);
+            $this->load->view('shop',$data);
+            $this->load->view('templates/footer');
+    } 
     
 }

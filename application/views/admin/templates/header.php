@@ -25,13 +25,13 @@ if(!isset($_SESSION['user_name'])){
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="<?= BASE_URL?>/admin">Admin Home Page<span class="sr-only"></span></a>
+              <a class="nav-link" href="<?= BASE_URL?>admin">Admin Home Page<span class="sr-only"></span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="<?= BASE_URL?>">Site Home Page</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?= BASE_URL?>/login/logout">Log Out</a>
+              <a class="nav-link" href="<?= BASE_URL?>login/logout">Log Out</a>
             </li>
           </ul>
         </div>

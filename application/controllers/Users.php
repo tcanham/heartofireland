@@ -9,6 +9,8 @@ public function index(){
         $data['users'] = $this->users_model->get_users();
         $this->load->model('admin/dashboard_model');
         $data['admin_links'] = $this->dashboard_model->get_admin_links();
+        $data['page_list'] = $this->dashboard_model->get_page_list();
+        $data['page_title'] = 'Users';
         $this->load->view('admin/templates/header',$data);
         $this->load->view('admin/users',$data);
         $this->load->view('admin/templates/footer');
@@ -16,8 +18,8 @@ public function index(){
 
     public function add_user(){
             $this->load->model('admin/dashboard_model');
-            $data['admin_links'] = $this->dashboard_model->get_admin_links();      
-            $data['page'] = 'Add User';
+            $data['admin_links'] = $this->dashboard_model->get_admin_links();     $data['page_list'] = $this->dashboard_model->get_page_list();
+            $data['page_title'] = 'Add User';
             $this->load->view('admin/templates/header',$data);
             $this->load->view('admin/add_user',$data);
             $this->load->view('admin/templates/footer');    
@@ -34,7 +36,8 @@ public function index(){
         if ($this->form_validation->run() == FALSE){
             $this->load->model('admin/dashboard_model');
             $data['admin_links'] = $this->dashboard_model->get_admin_links();
-            $data['page'] = 'Add User';
+            $data['page_list'] = $this->dashboard_model->get_page_list();
+            $data['page_title'] = 'Add User';
             $this->load->view('admin/templates/header',$data);
             $this->load->view('admin/add_user',$data);
             $this->load->view('admin/templates/footer');    
@@ -60,7 +63,8 @@ public function index(){
         if(isset($user['username']) && $user['username'] !=''){
             $this->load->model('admin/dashboard_model');
             $data['admin_links'] = $this->dashboard_model->get_admin_links();
-            $data['page'] = 'Add User';
+            $data['page_list'] = $this->dashboard_model->get_page_list();
+            $data['page_title'] = 'Add User';
             $data['username_error'] = 'Sorry this username is already taken';
             $this->load->view('admin/templates/header',$data);
             $this->load->view('admin/add_user',$data);
@@ -78,6 +82,7 @@ public function index(){
     public function edit_user($id){
         $this->load->model('admin/dashboard_model');
         $data['admin_links'] = $this->dashboard_model->get_admin_links();
+        $data['page_list'] = $this->dashboard_model->get_page_list();
         $this->load->model('admin/users_model');
         $data['user'] = $this->users_model->get_users($id);
         //Check if valid page data
@@ -105,6 +110,7 @@ public function index(){
         if ($this->form_validation->run() == FALSE){
             $this->load->model('admin/dashboard_model');
             $data['admin_links'] = $this->dashboard_model->get_admin_links();
+            $data['page_list'] = $this->dashboard_model->get_page_list();
             $this->load->view('admin/templates/header',$data);
             $this->load->view('admin/edit_user',$data);
             $this->load->view('admin/templates/footer');    
@@ -139,6 +145,7 @@ public function index(){
             $data['user'] = $this->users_model->check_delete_user($id);
             $this->load->model('admin/dashboard_model');
             $data['admin_links'] = $this->dashboard_model->get_admin_links();
+            $data['page_list'] = $this->dashboard_model->get_page_list();
             $this->load->view('admin/templates/header');
             $this->load->view('admin/check_delete_user',$data);
             $this->load->view('admin/templates/footer'); 

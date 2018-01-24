@@ -10,6 +10,14 @@
               <a class="nav-link" href="<?= BASE_URL?><?= $link['link']?>"><?= $link['title']?></a>
             </li> 
             <?php endforeach;?>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Pages <span class="sr-only">(current)</span></a>
+            </li>
+            <?php foreach($page_list as $page):?>
+            <li class="nav-item">
+              <a class="nav-link" href="<?= BASE_URL?>pages/<?= $page['link']?>"><?= $page['title']?></a>
+            </li> 
+            <?php endforeach;?>   
           </ul>
         </nav>
         <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
@@ -40,6 +48,3 @@
 <script>
     CKEDITOR.replace(add_profile_text) ;
 </script>
-        </main>
-      </div>
-    </div>

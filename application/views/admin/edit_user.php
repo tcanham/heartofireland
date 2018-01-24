@@ -6,18 +6,19 @@
             <li class="nav-item">
               <a class="nav-link active" href="#">Overview <span class="sr-only">(current)</span></a>
             </li>
-             <li class="nav-item">
-              <a class="nav-link" href="<?= BASE_URL?>users">Users</a>
-            </li>             
+            <?php foreach($admin_links as $link):?>
             <li class="nav-item">
-              <a class="nav-link" href="<?= BASE_URL?>profiles">Profiles</a>
-            </li>
+              <a class="nav-link" href="<?= BASE_URL?><?= $link['link']?>"><?= $link['title']?></a>
+            </li> 
+            <?php endforeach;?>
             <li class="nav-item">
-              <a class="nav-link" href="#">Items for sale</a>
+              <a class="nav-link active" href="#">Pages <span class="sr-only">(current)</span></a>
             </li>
+            <?php foreach($page_list as $page):?>
             <li class="nav-item">
-              <a class="nav-link" href="<?= BASE_URL?>admin/links">Links</a>
-            </li>
+              <a class="nav-link" href="<?= BASE_URL?>pages/<?= $page['link']?>"><?= $page['title']?></a>
+            </li> 
+            <?php endforeach;?> 
           </ul>
         </nav>
         <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">

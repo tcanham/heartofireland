@@ -4,8 +4,9 @@ class Links extends CI_Controller {
     
         public function add_link(){
             $this->load->model('admin/dashboard_model');
-            $data['admin_links'] = $this->dashboard_model->get_admin_links();      
-            $data['page'] = 'Add Link';
+            $data['admin_links'] = $this->dashboard_model->get_admin_links(); 
+            $data['page_list'] = $this->dashboard_model->get_page_list();
+            $data['page_title'] = 'Add Link';
             $this->load->view('admin/templates/header',$data);
             $this->load->view('admin/add_link',$data);
             $this->load->view('admin/templates/footer');    
@@ -19,7 +20,8 @@ class Links extends CI_Controller {
         if ($this->form_validation->run() == FALSE){
             $this->load->model('admin/dashboard_model');
             $data['admin_links'] = $this->dashboard_model->get_admin_links();
-            $data['page'] = 'Add Link';
+            $data['page_list'] = $this->dashboard_model->get_page_list();
+            $data['page_title'] = 'Add Link';
             $this->load->view('admin/templates/header',$data);
             $this->load->view('admin/add_link',$data);
             $this->load->view('admin/templates/footer');    
@@ -55,9 +57,10 @@ class Links extends CI_Controller {
         } 
         $this->load->model('admin/dashboard_model');
         $data['admin_links'] = $this->dashboard_model->get_admin_links();
+        $data['page_list'] = $this->dashboard_model->get_page_list();    
         $this->load->model('admin/links_model');
         $data['links'] = $this->links_model->get_links($id);   
-        $data['page'] = $data['links']['title'];
+        $data['page_title'] = $data['links']['title'];
         $this->load->view('admin/templates/header',$data);
         $this->load->view('admin/edit_link',$data);
         $this->load->view('admin/templates/footer');  
@@ -71,7 +74,8 @@ class Links extends CI_Controller {
         if ($this->form_validation->run() == FALSE){
             $this->load->model('admin/dashboard_model');
             $data['admin_links'] = $this->dashboard_model->get_admin_links();
-            $data['page'] = 'Add Link';
+            $data['page_list'] = $this->dashboard_model->get_page_list();
+            $data['page_title'] = 'Add Link';
             $this->load->view('admin/templates/header',$data);
             $this->load->view('admin/add_link',$data);
             $this->load->view('admin/templates/footer');    
@@ -103,6 +107,7 @@ class Links extends CI_Controller {
             $data['link'] = $this->links_model->check_delete_link($id);
             $this->load->model('admin/dashboard_model');
             $data['admin_links'] = $this->dashboard_model->get_admin_links();
+            $data['page_list'] = $this->dashboard_model->get_page_list();
             $this->load->view('admin/templates/header');
             $this->load->view('admin/check_delete_link',$data);
             $this->load->view('admin/templates/footer'); 
