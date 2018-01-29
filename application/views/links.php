@@ -1,6 +1,6 @@
 
 <div id="page_content">
-<h3 class="page-title"><?= $page?></h3>
+<h3 class="page-title"><?= $page_title?></h3>
 <?php
 
 foreach($links as $link):

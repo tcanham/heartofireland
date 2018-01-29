@@ -1,8 +1,14 @@
 <div class="page-data">
-    <h3 class="page-title"><?= $page ?></h3>
+    <h3 class="page-title"><?= $page_title ?></h3>
         <div id="contact_text_holder">
-        <p>Tel: <?=$contact_data['tel'] ?></p>
-        <p>Mobile: <?=$contact_data['mob'] ?></p>
+        <?php 
+            if($contact_data['tel']!= '') {
+            echo '<p>Tel:' .$contact_data['tel']. '</p>';
+            }
+                        if($contact_data['mob']!= '') {
+            echo '<p>Mobile:' .$contact_data['mob']. '</p>';
+            }
+        ?>   
         <p>Email: <?=$contact_data['email'] ?></p>
         <br/>
         <p><?=$contact_data['address'] ?></p>

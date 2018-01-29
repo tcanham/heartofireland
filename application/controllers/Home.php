@@ -9,7 +9,7 @@ class Home extends CI_Controller {
             $this->load->model('profiles_model');
             $data['profiles'] = $this->profiles_model->get_profiles();
             $data['contact_data'] = $this->home_model->contact_page_data();
-            $data['page'] = 'Home';
+            $data['page_title'] = 'Home';
             $this->load->view('templates/homeHeader',$data);
             $this->load->view('home',$data);
             $this->load->view('templates/footer');
@@ -18,7 +18,7 @@ class Home extends CI_Controller {
             $this->load->model('home_model');
             $data['about_data'] = $this->home_model->about_page_data();
             $data['contact_data'] = $this->home_model->contact_page_data();          
-            $data['page'] = 'About us';
+            $data['page_title'] = 'About us';
             $this->load->view('templates/header',$data);
             $this->load->view('about',$data);
             $this->load->view('templates/footer');
@@ -26,7 +26,7 @@ class Home extends CI_Controller {
     public function contact(){
             $this->load->model('home_model');
             $data['contact_data'] = $this->home_model->contact_page_data();
-            $data['page'] = 'Contact us';
+            $data['page_title'] = 'Contact us';
             $this->load->view('templates/header',$data);
             $this->load->view('contact',$data);
             $this->load->view('templates/footer');
@@ -37,7 +37,7 @@ class Home extends CI_Controller {
             $this->load->model('home_model');
             $data['links'] = $this->links_model->get_links(); 
             $data['contact_data'] = $this->home_model->contact_page_data();        
-            $data['page'] = 'Useful Links';
+            $data['page_title'] = 'Useful Links';
             $this->load->view('templates/header',$data);
             $this->load->view('links',$data);
             $this->load->view('templates/footer');        
