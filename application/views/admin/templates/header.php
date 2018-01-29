@@ -28,7 +28,7 @@ if(!isset($_SESSION['user_name'])){
               <a class="nav-link" href="<?= BASE_URL?>admin">Admin Home Page<span class="sr-only"></span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?= BASE_URL?>">Site Home Page</a>
+              <a class="nav-link" href="<?= BASE_URL?>" target="_blank">Site Home Page</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="<?= BASE_URL?>login/logout">Log Out</a>

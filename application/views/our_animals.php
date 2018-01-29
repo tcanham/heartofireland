@@ -1,7 +1,6 @@
 <div id="page_content">
     <h3 class="page-title"><?= $page_title?></h3>   
 <?php
-
 foreach($profiles as $profile):
 echo '<div class="profile-holder">';  
 echo '<img src='.BASE_URL.'assets/uploads/profile_images/'.$profile["image"].'>'; 

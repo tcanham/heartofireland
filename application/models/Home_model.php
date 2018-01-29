@@ -1,7 +1,13 @@
 <?php
 class Home_model extends CI_Model {
+    
+        public function about_page_data()
+        {
+            $query = $this->db->get('about-page');
+            return $query->row_array();    
+        }
 
-        public function contact_page_data()
+    public function contact_page_data()
         {
             $query = $this->db->get('contact-page');
             return $query->row_array();    

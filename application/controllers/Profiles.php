@@ -70,8 +70,10 @@ class Profiles extends CI_Controller {
             header('Location:' . BASE_URL . 'profiles');
         }
         $this->load->model('admin/dashboard_model');
+        $this->load->model('home_model');   
         $data['admin_links'] = $this->dashboard_model->get_admin_links();
         $data['page_list'] = $this->dashboard_model->get_page_list();
+        $data['contact_data'] = $this->home_model->contact_page_data();
         $data['page_title'] = $data['profile']['title'];
         $this->load->view('templates/header',$data);
         $this->load->view('single_profile',$data);
@@ -154,7 +156,9 @@ class Profiles extends CI_Controller {
     
     public function our_animals(){
         $this->load->model('profiles_model');
+        $this->load->model('home_model');
         $data['profiles'] = $this->profiles_model->get_profiles();
+        $data['contact_data'] = $this->home_model->contact_page_data();
         $data['page_title'] = 'Our Animals';
         $this->load->view('templates/header',$data);
         $this->load->view('our_animals',$data);

@@ -13,15 +13,16 @@
     <header>
         <div id="top_bar">
             <h3 class="top-bar-phone">
-                Tel:&nbsp;012&nbsp;345&nbsp;6789
+               <a href="tel:087 187 4268"> Tel:&nbsp;<?= $contact_data['mob'];?></a>
             </h3>
             <h3 class="top-bar-email">
-                Email:&nbsp;info@heartofireland.ie
+               <a href="mailto:info@heartofireland.com"> Email:&nbsp;<?= $contact_data['email'];?></a>
             </h3>
         </div>
         <div class="clearfix"></div>
         <div class="topnav" id="myTopnav">
             <a href="<?= BASE_URL ?>">Home</a>
+            <a href="<?= BASE_URL ?>about">About Us</a>
             <a href="<?= BASE_URL ?>our-animals">Our Animals</a>
             <a href="<?= BASE_URL ?>welfare">Animal Welfare</a>
             <a href="<?= BASE_URL ?>info">Information</a>    
