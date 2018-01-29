@@ -5,20 +5,23 @@ class Login extends CI_Controller {
     // Login logout and session start stop functions
     
             public function index(){
-            $this->load->view('templates/header');
-            $this->load->view('admin/templates/login');
+            $this->load->model('home_model');
+            $data['contact_data'] = $this->home_model->contact_page_data();
+            $this->load->view('templates/header',$data);
+            $this->load->view('admin/templates/login',$data);
             //$this->load->view('templates/footer');
     }
 
 
     public function login_check(){
-        
+            $this->load->model('home_model');
+            $data['contact_data'] = $this->home_model->contact_page_data();
             $this->form_validation->set_rules('username', 'Username', 'required');
             $this->form_validation->set_rules('password', 'Password', 'required');
         
             if ($this->form_validation->run() == FALSE){
-                $this->load->view('templates/header');
-                $this->load->view('admin/templates/login');
+                $this->load->view('templates/header',$data);
+                $this->load->view('admin/templates/login',$data);
                 $this->load->view('admin/templates/footer');    
             }else{
                 

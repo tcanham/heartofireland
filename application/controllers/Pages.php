@@ -73,6 +73,43 @@ class Pages extends CI_Controller {
         $this->load->view('admin/templates/footer');
 	}
     
+
+     public function update_about_page(){
+        
+        $this->form_validation->set_rules('id', 'Id', 'required'); 
+        $this->form_validation->set_rules('about_content', 'Page Content', 'required');
+
+        if ($this->form_validation->run() == FALSE){
+            $this->load->model('admin/dashboard_model');
+            $this->load->model('admin/pages_model');
+            $data['admin_links'] = $this->dashboard_model->get_admin_links();
+            $data['page_list'] = $this->dashboard_model->get_page_list();        
+            $page = 'about-page';
+            $data['about_data'] = $this->pages_model->get_page_for_edit($page);
+            $data['page_title'] = 'Edit About Page';
+            $this->load->view('admin/templates/header',$data);
+            $this->load->view('admin/edit_about_page',$data);
+            $this->load->view('admin/templates/footer');    
+        }else{
+            $id = $this->security->xss_clean($this->input->post('id'));
+            $content = $this->security->xss_clean($this->input->post('about_content'));
+        }
+        //Check for data
+        if(!isset($id) || !isset($content)){
+           $check = 0; 
+        }else{
+            $check = 1;
+        }
+        
+        //Send to the database
+        if($check == TRUE){
+        $about_data = array("id"=>$id,"content"=>$content);
+        $this->load->model('admin/pages_model');
+        $this->pages_model->update_about_page($about_data);
+        header('Location:' . BASE_URL . 'admin');
+        }       
+    }   
+    
 	public function welfare_page(){
         
         $this->load->model('admin/dashboard_model');

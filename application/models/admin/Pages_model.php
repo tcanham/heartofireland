@@ -30,6 +30,19 @@ class Pages_model extends CI_Model {
 
         $this->db->where('id',$contact_data['id']);
         $this->db->update('contact-page', $data);
-    }  
+    }
+    
+    //Function to update a page in the database
+    public function update_about_page($about_data){
+
+        $data = array(
+        'id'       => $about_data['id'],
+        'content'  => $about_data['content']  
+
+        );
+
+        $this->db->where('id',$about_data['id']);
+        $this->db->update('about-page', $data);
+    } 
     
 }

@@ -23,28 +23,7 @@
         <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
           <h1>Welcome <?php if(isset($_SESSION['user_name'])) echo $_SESSION['user_name'];?></h1>
           <h2></h2>
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1,001</td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                  <td> 1</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+
         </main>
       </div>
     </div>
