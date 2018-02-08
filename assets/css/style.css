@@ -121,6 +121,12 @@ input[type=submit]{
     margin-bottom: 20px;
 }
 
+.fb-holder{
+    width: 500px;
+    margin: 20px;
+    border: 1px solid #F1C53A;
+}
+
 /*About page styles*/
 
 .about-text-holder{
@@ -180,6 +186,20 @@ input[type=submit]{
     background: #F1C53A;
 }
 
+/*Donation page styles*/
+
+.donate-button{
+    width: 200px;
+    margin: 20px;
+    padding: 20px 10px;
+    border: 1px solid #Fffff0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.donate-button p{
+    margin-bottom: 10px;
+}
 /*Links page styles*/
 
 .link-holder{

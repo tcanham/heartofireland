@@ -13,6 +13,7 @@
         <meta charset="UTF-8">
 </head>
 <body>
+
     <div id="container">
     <header>
         <div id="top_bar">
@@ -31,7 +32,6 @@
             <a href="<?= BASE_URL ?>our-animals">Our Animals</a>
             <a href="<?= BASE_URL ?>welfare">Animal Welfare</a> 
             <a href="<?= BASE_URL ?>info">Information</a>    
-            <a href="<?= BASE_URL ?>donations">Donate</a>
             <a href="<?= BASE_URL ?>shop">Items for Sale</a>    
             <a href="<?= BASE_URL ?>home/links">Links</a>
             <a href="<?= BASE_URL ?>contact">Contact</a>

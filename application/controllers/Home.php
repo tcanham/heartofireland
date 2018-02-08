@@ -57,7 +57,7 @@ class Home extends CI_Controller {
             $this->load->model('home_model');
             $data['info_data'] = $this->home_model->info_page_data();
             $data['contact_data'] = $this->home_model->contact_page_data();       
-            $data['page_title'] = 'Useful Information';
+            $data['page_title'] = 'Information';
             $this->load->view('templates/header',$data);
             $this->load->view('info',$data);
             $this->load->view('templates/footer');

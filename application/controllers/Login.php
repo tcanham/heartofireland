@@ -7,6 +7,7 @@ class Login extends CI_Controller {
             public function index(){
             $this->load->model('home_model');
             $data['contact_data'] = $this->home_model->contact_page_data();
+            $data['page_title'] = 'log in';
             $this->load->view('templates/header',$data);
             $this->load->view('admin/templates/login',$data);
             //$this->load->view('templates/footer');
@@ -16,6 +17,7 @@ class Login extends CI_Controller {
     public function login_check(){
             $this->load->model('home_model');
             $data['contact_data'] = $this->home_model->contact_page_data();
+            $data['page_title'] = 'log in';
             $this->form_validation->set_rules('username', 'Username', 'required');
             $this->form_validation->set_rules('password', 'Password', 'required');
         
