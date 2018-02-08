@@ -10,7 +10,7 @@ echo '<p'. $profile['text'] .'</p>';
 echo '</div>'; 
 echo '</div>';
 echo '<div>';
-echo '<p class="profile-date">Uploaded/amended:&nbsp;' . $profile['created'] .'</p>';     
+echo '<p class="profile-date">Uploaded on:&nbsp;' . $profile['created'] .'</p>';     
 echo '</div>';  
 echo '<div class="clearfix"></div>'; 
 endforeach;

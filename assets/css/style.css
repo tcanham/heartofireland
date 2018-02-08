@@ -138,9 +138,6 @@ input[type=submit]{
 
 .profile-holder{
     min-height: 200px;
-    border-top: 1px solid #F1C53A;
-    border-left: 1px solid #F1C53A;
-    border-right: 1px solid #F1C53A;
     padding: 5px;
     box-sizing: border-box;
     margin: 5px;
@@ -188,18 +185,7 @@ input[type=submit]{
 
 /*Donation page styles*/
 
-.donate-button{
-    width: 200px;
-    margin: 20px;
-    padding: 20px 10px;
-    border: 1px solid #Fffff0;
-    box-sizing: border-box;
-    text-align: center;
-}
 
-.donate-button p{
-    margin-bottom: 10px;
-}
 /*Links page styles*/
 
 .link-holder{
@@ -244,9 +230,82 @@ input[type=submit]{
 
 /* Footer styles*/
 
-footer{
+
+.footer-top{
     background: #F1C53A;
-    padding: 5px;
+    padding-top: 5px;    
+}
+
+.top-footer-heading {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.footer-div{
+    width: 280px; 
+    display: inline-block;
+    border: 1px dashed red;
+    margin: .5%;   
+}
+.donate-button-holder{
+    width: 280px;
+    padding: 20px 10px;
+    box-sizing: border-box;
+    text-align: center;
+
+}
+
+.donate-button-holder a:hover{
+    background: #fffff0;
+    color: #2BB049;
+}
+
+.donate-button-holder input[type=submit]{
+    background-color: #2BB049;
+    color: #fff;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 16px;
+    min-height: 40px;
+    width: 98%;
+    margin: 10px auto;
+    border: none;
+}
+
+.donate-button-holder input[type=submit]:hover{
+    background: #fffff0;
+    color: #2BB049;    
+}
+
+.donate-btn{
+    background-color: #2BB049;
+    color: #fff;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 10px 5px;
+    width: 94%;
+    margin:  auto;
+    text-decoration: none;
+    display: block;
+}
+
+.links-holder{
+
+}
+
+.spare{
+
+}
+
+.footer-bottom{
+    background: #fffff0;
+    padding: 5px;    
+    color: #2BB049;
+}
+
+.footer-bottom a{
+    color: #2BB049;    
 }
 
 #login_button{
