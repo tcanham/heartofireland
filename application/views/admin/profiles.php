@@ -38,7 +38,7 @@
                       '<tr><td>'.$profile["id"].'</td>'.
                       '<td>'.$profile["title"].'</td>'.
                       '<td><img src='.BASE_URL.'assets/uploads/profile_images/'.$profile["image"].'></td>'.
-                      '<td>'.$profile["created"].'</td>
+                      '<td>'.$this->site_functions->fix_date($profile["created"]).'</td>
                       <td><a href="profiles/view_profile/'.$profile["slug"].'" target="_blank"><button class="alert alert-primary">View</button></a></td>
                       <td><a href="profiles/edit_profile/'.$profile["slug"].'"><button class="alert alert-success">Edit</button></a></td>
                       <td><a href="profiles/check_delete_profile/'.$profile['id'].'"><button class="alert alert-danger">Delete</button></td></tr></a>'

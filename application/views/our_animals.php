@@ -10,7 +10,7 @@ echo '<p'. $profile['text'] .'</p>';
 echo '</div>'; 
 echo '</div>';
 echo '<div>';
-echo '<p class="profile-date">Uploaded on:&nbsp;' . $profile['created'] .'</p>';     
+echo '<p class="profile-date">' . $profile['title'] .'&#39;s&nbsp;profile&nbsp;uploaded on:&nbsp;' . $this->site_functions->fix_date($profile['created']) .'</p>';      
 echo '</div>';  
 echo '<div class="clearfix"></div>'; 
 endforeach;

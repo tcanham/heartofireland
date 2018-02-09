@@ -47,5 +47,11 @@ class Site_functions{
             }
         }
     }
-      
+    
+    //Date function
+    public function fix_date($date){
+        $fixed = strtotime($date );
+        $date = date("d/m/Y",$fixed);
+        return $date;
+    }
 }

@@ -278,12 +278,10 @@ input[type=submit]{
 
 .links-holder{
     text-align: left;
-    border: 1px dashed red;
     height: 200px;
 }
 
 .spare{
-    border: 1px dashed red;
     height: 200px;
 }
 
@@ -378,19 +376,14 @@ input[type=submit]{
             width: 90%;
             height: auto;
             margin: auto;
-            border: 1px dashed blue;
     }
         .footer-div{
             min-width: 90%; 
             display: inline-block;
-            border: 1px dashed red;
             margin: .5%;  
             vertical-align: top;
     }
 }
-}
-
-
 /*Collapsable nav media styles*/
 
 @media screen and (max-width: 800px) {
