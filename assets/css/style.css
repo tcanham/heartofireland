@@ -233,7 +233,8 @@ input[type=submit]{
 
 .footer-top{
     background: #F1C53A;
-    padding-top: 5px;    
+    padding-top: 5px;  
+    text-align: center;
 }
 
 .top-footer-heading {
@@ -241,61 +242,49 @@ input[type=submit]{
     font-size: 1.2em;
 }
 
-.footer-div{
-    width: 280px; 
+.footer_divs_outer{
     display: inline-block;
-    border: 1px dashed red;
-    margin: .5%;   
+    width: 49%;
+    height: auto;
+    margin-left: -10px;
+}
+
+.footer-div{
+    width: 45%; 
+    display: inline-block;
+    margin: .5%;  
+    vertical-align: top;
 }
 .donate-button-holder{
-    width: 280px;
-    padding: 20px 10px;
-    box-sizing: border-box;
-    text-align: center;
 
 }
 
-.donate-button-holder a:hover{
+.donate-btn:hover{
     background: #fffff0;
     color: #2BB049;
-}
-
-.donate-button-holder input[type=submit]{
-    background-color: #2BB049;
-    color: #fff;
-    cursor: pointer;
-    font-family: inherit;
-    font-size: 16px;
-    min-height: 40px;
-    width: 98%;
-    margin: 10px auto;
-    border: none;
-}
-
-.donate-button-holder input[type=submit]:hover{
-    background: #fffff0;
-    color: #2BB049;    
 }
 
 .donate-btn{
     background-color: #2BB049;
     color: #fff;
     cursor: pointer;
-    font-family: inherit;
     font-size: 16px;
     padding: 10px 5px;
     width: 94%;
     margin:  auto;
     text-decoration: none;
-    display: block;
+    margin-bottom: 10px;
 }
 
 .links-holder{
-
+    text-align: left;
+    border: 1px dashed red;
+    height: 200px;
 }
 
 .spare{
-
+    border: 1px dashed red;
+    height: 200px;
 }
 
 .footer-bottom{
@@ -317,7 +306,6 @@ input[type=submit]{
   color: #2BB049;
 }
 
-
 /* media queries*/
 
 @media (max-width:425px){
@@ -338,7 +326,6 @@ input[type=submit]{
     float: left;
     margin-left: 5px;
     }    
-}
 
 @media (max-width:675px){
     
@@ -386,6 +373,21 @@ input[type=submit]{
         .link-holder a{
             font-size:1.5em;
     }
+     .footer_divs_outer{
+            display: block;
+            width: 90%;
+            height: auto;
+            margin: auto;
+            border: 1px dashed blue;
+    }
+        .footer-div{
+            min-width: 90%; 
+            display: inline-block;
+            border: 1px dashed red;
+            margin: .5%;  
+            vertical-align: top;
+    }
+}
 }
 
 
