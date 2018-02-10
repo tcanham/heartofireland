@@ -20,7 +20,6 @@ class Pages extends CI_Controller {
     public function update_contact_page(){
         
         $this->form_validation->set_rules('id', 'Id', 'required'); 
-        $this->form_validation->set_rules('tel', 'Tel', 'required');
         $this->form_validation->set_rules('mob', 'Mobile', 'required');
         $this->form_validation->set_rules('address', 'Address', 'required'); 
         $this->form_validation->set_rules('email', 'Email', 'required'); 
@@ -44,7 +43,7 @@ class Pages extends CI_Controller {
             $email = $this->security->xss_clean($this->input->post('email'));
         }
         //Check for data
-        if(!isset($tel) || !isset($mob) || !isset($address) || !isset($email)){
+        if(!isset($mob) || !isset($address) || !isset($email)){
            $check = 0; 
         }else{
             $check = 1;
@@ -55,7 +54,7 @@ class Pages extends CI_Controller {
         $contact_data = array("id"=>$id,"tel"=>$tel,"mob"=>$mob,"address"=>$address,"email"=>$email);
         $this->load->model('admin/pages_model');
         $this->pages_model->update_contact_page($contact_data);
-        header('Location:' . BASE_URL . 'admin');
+        header('Location:' . BASE_URL . 'pages/contact_page');
         }       
     }
     
@@ -106,7 +105,7 @@ class Pages extends CI_Controller {
         $about_data = array("id"=>$id,"content"=>$content);
         $this->load->model('admin/pages_model');
         $this->pages_model->update_about_page($about_data);
-        header('Location:' . BASE_URL . 'admin');
+        header('Location:' . BASE_URL . 'pages/about_page');
         }       
     }   
     

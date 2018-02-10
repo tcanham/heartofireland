@@ -46,6 +46,10 @@ input[type=submit]{
     border: 1px outset #808080;
 }
 
+.inline-block-container{
+    text-align: center;
+}
+
 /*Header styles*/
 #top_bar{
     width:100%;
@@ -218,13 +222,19 @@ input[type=submit]{
 /*Contact page styles*/
 
 #contact_text_holder{
-    float: right;
-    width: 35%;
+    display: inline-block;
+    vertical-align: top;
+    width: 45%;
     font-size: 1.2em;
+    text-align: left;
+    margin-left: 15px;
+    overflow: auto;
 }
 
 #map_holder{
-   width: 60%; 
+    display: inline-block;   
+    vertical-align: top; 
+   width: 45%; 
     margin-left: 5px;
 }
 
