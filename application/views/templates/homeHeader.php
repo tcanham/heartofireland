@@ -25,7 +25,10 @@
             </h3>
         </div>
         <div class="clearfix"></div>
-        <div id="banner_div"><img src="<?= BASE_URL?>assets/uploads/hoiLogo.jpg"></div>
+        <div id="banner_div">
+            <div class="icon-holder">
+            </div>
+        </div>
         <div class="topnav" id="myTopnav">
             <a href="<?= BASE_URL ?>">Home</a>
             <a href="<?= BASE_URL ?>about">About Us</a>

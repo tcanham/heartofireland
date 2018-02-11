@@ -1,6 +1,6 @@
 <?php
 class Site_functions{
-
+//Function to upload the profile images
      public function profile_image_upload(){
         $target_dir = "./assets/uploads/profile_images/";
         $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
@@ -48,10 +48,24 @@ class Site_functions{
         }
     }
     
-    //Date function
+    //Format date function
     public function fix_date($date){
         $fixed = strtotime($date );
         $date = date("d/m/Y",$fixed);
         return $date;
     }
+    
+    //function to return a welcome message dependant on the current time
+    public function time_greeting(){
+        $time = (int)date("H");
+        if($time >= 0 && $time < 12 ){
+            $result = 'good morning';
+        }elseif($time > 12 && $time < 17){
+            $result = 'good afternoon';
+        }else{
+            $result = 'good evening';
+        }
+        return $result;
+    }
+    
 }

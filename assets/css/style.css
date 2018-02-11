@@ -69,26 +69,34 @@ input[type=submit]{
     text-decoration: none;
 }
 
+.top-bar-email{
+  float: right;
+}
+
 .top-bar-email a{
     color: #2BB049;
     text-decoration: none;
 }
 
 #banner_div{
-    height: 350px;
-    max-width:1200px;
-    overflow: hidden;
+    width: 100%;
+    min-height: 350px;
     background: url(../../assets/uploads/banner.jpg);
+    background-size: cover;                      
     background-repeat: no-repeat;
-    background-size: cover;
-}
-#banner_div img{
-    display: none;
+    background-position: center center;   
 }
 
-
-.top-bar-email{
-  float: right;
+.icon-holder{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    top: 2px;
+    left: 2px;
+    background: rgba(60,60,60,.5);
+}
+.icon-holder img{
+    width: 100%;
 }
 
 /*Collapsable nav styles*/
@@ -120,6 +128,16 @@ input[type=submit]{
 
 /*Home page styles*/
 
+.greeting{
+    text-align: center;
+    color: #2BB049;
+}
+.greeting p{
+    color: #606060;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
 #scroll_holder{
     margin-top: 20px;
     margin-bottom: 20px;
@@ -240,7 +258,6 @@ input[type=submit]{
 
 /* Footer styles*/
 
-
 .footer-top{
     background: #F1C53A;
     padding-top: 5px;  
@@ -288,11 +305,14 @@ input[type=submit]{
 
 .links-holder{
     text-align: left;
-    height: 200px;
 }
 
-.spare{
-    height: 200px;
+.logo{
+     
+}
+
+.map-holder{
+    
 }
 
 .footer-bottom{
@@ -416,16 +436,6 @@ input[type=submit]{
     display: block;
     text-align: left;
   }
-    
-     #banner_div{
-        height: auto;
-        background: #F1C53A;
-    }
-    #banner_div img{
-            display: block;
-            width: 100%;
-            height: auto;
-    }   
     
 }
 
