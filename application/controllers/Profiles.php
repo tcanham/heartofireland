@@ -74,6 +74,7 @@ class Profiles extends CI_Controller {
         $data['admin_links'] = $this->dashboard_model->get_admin_links();
         $data['page_list'] = $this->dashboard_model->get_page_list();
         $data['contact_data'] = $this->home_model->contact_page_data();
+        $data['footer_data'] = $this->home_model->get_links();
         $data['page_title'] = $data['profile']['title'];
         $this->load->view('templates/header',$data);
         $this->load->view('single_profile',$data);
@@ -159,10 +160,11 @@ class Profiles extends CI_Controller {
         $this->load->model('home_model');
         $data['profiles'] = $this->profiles_model->get_profiles();
         $data['contact_data'] = $this->home_model->contact_page_data();
+        $data['footer_data'] = $this->home_model->get_links();
         $data['page_title'] = 'Our Animals';
         $this->load->view('templates/header',$data);
         $this->load->view('our_animals',$data);
-        $this->load->view('templates/footer');   
+        $this->load->view('templates/footer',$data);   
     }
         
     

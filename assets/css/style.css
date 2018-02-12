@@ -304,15 +304,29 @@ input[type=submit]{
 }
 
 .links-holder{
-    text-align: left;
 }
 
-.logo{
-     
+.links-btn{
+    background-color: #2BB049;
+    color: #fffff0;   
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 5px;
+    width: 94%;
+    margin: auto;
+    text-decoration: none;
+    margin-bottom: 10px;
 }
 
-.map-holder{
-    
+.links-btn:hover{
+    background: #fffff0;
+    color: #2BB049;
+}
+
+.logo{    
+}
+
+.map-holder{   
 }
 
 .footer-bottom{
