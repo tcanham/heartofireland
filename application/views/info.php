@@ -1,4 +1,5 @@
 <div class="page-content">
-    <?= $info_data['title'];?>
+    <h3><?= $info_data['title'];?></h3>
+    <?= $info_data['content'];?>
  
 </div>

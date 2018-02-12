@@ -22,7 +22,24 @@
         </nav>
         <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
             <h1>Edit <?php echo $welfare_data['title']; ?></h1>
-
+               <form action="<?= BASE_URL?>Pages/update_welfare_page/<?= $welfare_data['id']?>" method="post" enctype="multipart/form-data">
+                    <div class="error-box"><?php echo validation_errors(); ?></div>
+                    <table>
+                        <tr>
+                            <td><input type="hidden"name="id" id="name"value="<?php echo $welfare_data['id']; ?>"></td>
+                        </tr>                        
+                        <tr>
+                            <td></td><td><textarea name="welfare_content" id="welfare_content"><?php echo $welfare_data['content']; ?></textarea></td>
+                        </tr>
+                        <tr>
+                            <td></td><td><input type="submit" value="Edit Welfare Page" name="submit"></td>
+                        </tr>   
+                    </table>  
+                </form>
         </main> 
       </div>
     </div>
+ <script>
+    CKEDITOR.replace(welfare_content) ;
+</script>  
+

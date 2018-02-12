@@ -32,7 +32,7 @@ class Pages_model extends CI_Model {
         $this->db->update('contact-page', $data);
     }
     
-    //Function to update a page in the database
+    //Functions to update a pages in the database
     public function update_about_page($about_data){
 
         $data = array(
@@ -44,5 +44,29 @@ class Pages_model extends CI_Model {
         $this->db->where('id',$about_data['id']);
         $this->db->update('about-page', $data);
     } 
+    
+    public function update_welfare_page($welfare_data){
+
+        $data = array(
+        'id'       => $welfare_data['id'],
+        'content'  => $welfare_data['content']  
+
+        );
+
+        $this->db->where('id',$welfare_data['id']);
+        $this->db->update('welfare-page', $data);
+    } 
+        public function update_info_page($info_data){
+
+        $data = array(
+        'id'       => $info_data['id'],
+        'content'  => $info_data['content']  
+
+        );
+
+        $this->db->where('id',$info_data['id']);
+        $this->db->update('info-page', $data);
+    } 
+    
     
 }

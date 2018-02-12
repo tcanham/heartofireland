@@ -38,7 +38,8 @@
                 </form>
         </main> 
       </div>
+ </div>
  <script>
     CKEDITOR.replace(about_content) ;
-</script>   </div>
+</script>  
 

@@ -121,6 +121,42 @@ class Pages extends CI_Controller {
         $this->load->view('admin/edit_welfare_page',$data);
         $this->load->view('admin/templates/footer');
 	}
+    
+     public function update_welfare_page(){
+        
+        $this->form_validation->set_rules('id', 'Id', 'required'); 
+        $this->form_validation->set_rules('welfare_content', 'Page Content', 'required');
+
+        if ($this->form_validation->run() == FALSE){
+            $this->load->model('admin/dashboard_model');
+            $this->load->model('admin/pages_model');
+            $data['admin_links'] = $this->dashboard_model->get_admin_links();
+            $data['page_list'] = $this->dashboard_model->get_page_list();        
+            $page = 'welfare-page';
+            $data['welfare_data'] = $this->pages_model->get_page_for_edit($page);
+            $data['page_title'] = 'Edit Welfare Page';
+            $this->load->view('admin/templates/header',$data);
+            $this->load->view('admin/edit_about_page',$data);
+            $this->load->view('admin/templates/footer');    
+        }else{
+            $id = $this->security->xss_clean($this->input->post('id'));
+            $content = $this->security->xss_clean($this->input->post('welfare_content'));
+        }
+        //Check for data
+        if(!isset($id) || !isset($content)){
+           $check = 0; 
+        }else{
+            $check = 1;
+        }
+        
+        //Send to the database
+        if($check == TRUE){
+        $welfare_data = array("id"=>$id,"content"=>$content);
+        $this->load->model('admin/pages_model');
+        $this->pages_model->update_welfare_page($welfare_data);
+        header('Location:' . BASE_URL . 'pages/welfare_page');
+        }       
+    }       
  
 	public function info_page(){
         
@@ -134,6 +170,42 @@ class Pages extends CI_Controller {
         $this->load->view('admin/edit_info_page',$data);
         $this->load->view('admin/templates/footer');
 	}
+    
+     public function update_info_page(){
+        
+        $this->form_validation->set_rules('id', 'Id', 'required'); 
+        $this->form_validation->set_rules('info_content', 'Page Content', 'required');
+
+        if ($this->form_validation->run() == FALSE){
+            $this->load->model('admin/dashboard_model');
+            $this->load->model('admin/pages_model');
+            $data['admin_links'] = $this->dashboard_model->get_admin_links();
+            $data['page_list'] = $this->dashboard_model->get_page_list();        
+            $page = 'info-page';
+            $data['info_data'] = $this->pages_model->get_page_for_edit($page);
+            $data['page_title'] = 'Edit Information Page';
+            $this->load->view('admin/templates/header',$data);
+            $this->load->view('admin/edit_info_page',$data);
+            $this->load->view('admin/templates/footer');    
+        }else{
+            $id = $this->security->xss_clean($this->input->post('id'));
+            $content = $this->security->xss_clean($this->input->post('info_content'));
+        }
+        //Check for data
+        if(!isset($id) || !isset($content)){
+           $check = 0; 
+        }else{
+            $check = 1;
+        }
+        
+        //Send to the database
+        if($check == TRUE){
+        $info_data = array("id"=>$id,"content"=>$content);
+        $this->load->model('admin/pages_model');
+        $this->pages_model->update_info_page($info_data);
+        header('Location:' . BASE_URL . 'pages/info_page');
+        }       
+    }     
     
 	public function donate_page(){
         

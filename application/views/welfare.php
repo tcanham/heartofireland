@@ -1,3 +1,4 @@
 <div id="page_content">
-    <?= $welfare_data['title'];?>
+    <h3><?= $welfare_data['title'];?></h3>
+    <?= $welfare_data['content'];?>
 </div>
