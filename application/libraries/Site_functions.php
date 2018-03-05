@@ -63,9 +63,10 @@ class Site_functions{
             $result = 'good morning';
         }elseif($time >= 12 && $time < 17){
             $result = 'good afternoon';
-        }elseif($time >17 && $time <=24){
+        }elseif($time >=17 && $time <=24){
             $result = 'good evening';
         }
+
         return $result;
     }
     
