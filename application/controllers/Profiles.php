@@ -160,7 +160,8 @@ class Profiles extends CI_Controller {
         $this->load->model('home_model');
         $data['profiles'] = $this->profiles_model->get_profiles();
         $data['contact_data'] = $this->home_model->contact_page_data();
-        $data['footer_data'] = $this->home_model->get_links();
+        $data['footer_links'] = $this->home_model->get_links();
+        $data['footer_donations'] = $this->dashboard_model->get_donations_section(); 
         $data['page_title'] = 'Our Animals';
         $this->load->view('templates/header',$data);
         $this->load->view('our_animals',$data);

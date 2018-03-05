@@ -57,12 +57,13 @@ class Site_functions{
     
     //function to return a welcome message dependant on the current time
     public function time_greeting(){
+         date_default_timezone_set('Europe/Dublin');	
         $time = (int)date("H");
-        if($time >= 0 && $time < 12 ){
+        if($time >=0 && $time < 12 ){
             $result = 'good morning';
-        }elseif($time > 12 && $time < 17){
+        }elseif($time >= 12 && $time < 17){
             $result = 'good afternoon';
-        }else{
+        }elseif($time >17 && $time <=24){
             $result = 'good evening';
         }
         return $result;

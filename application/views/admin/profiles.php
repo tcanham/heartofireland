@@ -34,10 +34,15 @@
                   </thead>
                   <tbody>
                       <?php foreach($profiles as $profile):?>
-                      <?= 
+                      <?php echo
                       '<tr><td>'.$profile["id"].'</td>'.
-                      '<td>'.$profile["title"].'</td>'.
-                      '<td><img src='.BASE_URL.'assets/uploads/profile_images/'.$profile["image"].'></td>'.
+                      '<td>'.$profile["title"].'</td><td>';
+                        if ($profile["image"] != ''){
+                            echo '<img src='.BASE_URL.'assets/uploads/profile_images/'.$profile["image"].'>';
+                        }
+                        echo '</td>';
+                        ?>
+                        <?php  echo
                       '<td>'.$this->site_functions->fix_date($profile["created"]).'</td>
                       <td><a href="profiles/view_profile/'.$profile["slug"].'" target="_blank"><button class="alert alert-primary">View</button></a></td>
                       <td><a href="profiles/edit_profile/'.$profile["slug"].'"><button class="alert alert-success">Edit</button></a></td>
