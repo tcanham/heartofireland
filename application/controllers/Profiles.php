@@ -74,11 +74,12 @@ class Profiles extends CI_Controller {
         $data['admin_links'] = $this->dashboard_model->get_admin_links();
         $data['page_list'] = $this->dashboard_model->get_page_list();
         $data['contact_data'] = $this->home_model->contact_page_data();
-        $data['footer_data'] = $this->home_model->get_links();
+        $data['footer_links'] = $this->home_model->get_links();
+        $data['footer_donations'] = $this->dashboard_model->get_donations_section();          
         $data['page_title'] = $data['profile']['title'];
         $this->load->view('templates/header',$data);
         $this->load->view('single_profile',$data);
-        $this->load->view('templates/footer');  
+        $this->load->view('templates/footer',$data);  
     }
     
     

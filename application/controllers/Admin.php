@@ -56,7 +56,7 @@ class Admin extends CI_Controller {
             $this->load->view('admin/templates/footer');    
         }else{
             $id = $this->security->xss_clean($this->input->post('id'));
-            $content = $this->security->xss_clean($this->input->post('donations_content'));
+            $content = $this->input->post('donations_content');
         }
         //Check for data
         if(!isset($id) || !isset($content)){

@@ -2,7 +2,7 @@
             <div class="footer-top"> 
                 <div class="footer_divs_outer">
                     <div class="donate-button-holder footer-div">
-                       <?= html_entity_decode($footer_donations["content"]);?>     
+                        <?= $footer_donations['content']; ?>
                     </div> 
                     <div class="links-holder footer-div ">
                         <?php foreach($footer_links as $link): ?>
