@@ -29,7 +29,7 @@ body{
     margin: 10px 5px;
 }
 
-input[type=text],input[type=password],input[type=number]{
+input[type=text],input[type=password],input[type=number],input[type=email],input[type=tel]{
     background-color: #F1C53A;
     color: #808080;
     width: 100%;
@@ -46,9 +46,19 @@ input[type=submit]{
     border: 1px outset #808080;
 }
 
+textarea{
+    background-color: #F1C53A;
+    color: #808080;
+    width: 100%;
+    height: 150px;
+    border: 1px solid #808080;
+    box-sizing: border-box;  
+}
+
 .inline-block-container{
     text-align: center;
 }
+
 
 /*Header styles*/
 #top_bar{
@@ -149,6 +159,36 @@ input[type=submit]{
     border: 1px solid #F1C53A;
 }
 
+#news_section{
+    width: 70%;
+    padding: 5px;
+}
+#news_section h2{
+    text-align: center;
+}
+.news-item{
+    min-height: 100px;
+    padding: 5px;
+    box-sizing: border-box;
+    margin: 5px;
+    border-bottom:1px solid #F1C53A; 
+
+}
+
+#right_bar_home{
+    float: right;
+    width: 25%;
+    min-height: 100px;
+    border: 1px solid #F1C53A;
+    padding: 5px;
+    box-sizing: border-box;
+    margin-right: 5px;
+}
+
+#right_bar_home h2{
+    text-align: center;
+}
+
 /*About page styles*/
 
 .about-text-holder{
@@ -196,7 +236,6 @@ input[type=submit]{
 }
 
 .profile-date{
-    font-style: italic;
     margin-left: 5px;
     margin-right: 5px;
     margin-bottom: 10px;
@@ -205,10 +244,7 @@ input[type=submit]{
     background: #F1C53A;
 }
 
-/*Donation page styles*/
-
-
-/*Links page styles*/
+/*Links area styles*/
 
 .link-holder{
     min-height: 200px;
@@ -217,7 +253,6 @@ input[type=submit]{
     box-sizing: border-box;
     margin: 5px;
 }
-
 
 .links-page-link{
     margin-bottom: 10px;
@@ -240,21 +275,23 @@ input[type=submit]{
 /*Contact page styles*/
 
 #contact_text_holder{
-    display: inline-block;
-    vertical-align: top;
+    float: right;
     width: 45%;
     font-size: 1.2em;
-    text-align: left;
-    margin-left: 15px;
+    margin-left: 5%;
     overflow: auto;
+    margin-bottom: 20px;
 }
 
-#map_holder{
-    display: inline-block;   
-    vertical-align: top; 
-   width: 45%; 
+#contact_form_holder{
+    float: right;
+    min-height: 200px;
+    font-size: 1.2em;    
+    width: 45%;
     margin-left: 5px;
+    margin-bottom: 20px;
 }
+
 
 /* Footer styles*/
 
@@ -281,9 +318,6 @@ input[type=submit]{
     display: inline-block;
     margin: .5%;  
     vertical-align: top;
-}
-.donate-button-holder{
-
 }
 
 .donate-btn:hover{
@@ -378,19 +412,19 @@ input[type=submit]{
     box-sizing: border-box;
     background: #fffff0;
     color: #2BB049;
-} 
-    
-.top-bar-phone {
-    font-size: 1.5em; 
-    margin: 10px 0px;
-}   
-    
-.top-bar-email {
-    width: 100%;
-    overflow: scroll;
-    font-size: 1.5em;
-    margin-left: -2px;
-}   
+    } 
+
+    .top-bar-phone {
+        font-size: 1.5em; 
+        margin: 10px 0px;
+    }   
+
+    .top-bar-email {
+        width: 100%;
+        overflow: scroll;
+        font-size: 1.5em;
+        margin-left: -2px;
+    }   
     
     #contact_text_holder{
         float: none;
@@ -399,11 +433,18 @@ input[type=submit]{
         padding-left: 10px;
     }
     
-    #map_holder{
-        width: 95%;
+    #contact_form_holder{
+        float: none;
+        width: 100%;
+        margin-bottom: 20px;
+        padding-left: 10px;
         margin: auto;
     }
     
+    .enquiry-holder td{
+        
+    }
+
     .link-text{
         float: none;
     }

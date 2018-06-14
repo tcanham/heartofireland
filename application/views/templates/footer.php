@@ -1,4 +1,18 @@
-        <footer> 
+<?php
+            if(isset($_POST["submit"])){
+                $name=$_POST["name"];
+                $email=$_POST["email"];
+                $mobile=$_POST["mob"];
+                $mess=$_POST["msg"];
+            }
+            function testInput($data) {
+              $data = trim($data);
+              $data = stripslashes($data);
+              $data = htmlspecialchars($data);
+              return $data;
+            }
+?>            
+<footer> 
             <div class="footer-top"> 
                 <div class="footer_divs_outer">
                     <div class="donate-button-holder footer-div">
@@ -11,14 +25,61 @@
                     </div>
                 </div>  
                 <div class="footer_divs_outer">
-                    <div class="footer-div">
+                    <div class="enquiry-holder footer-div">
+                        <h3>Need some advice </h3>
+                        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+		<table>
+			<tr>
+				<td>Name: </td><td><input name="name"  type="text" value="<?php if(isset($name)){echo $name;}?>"></td><td><span class="red">*</span></td>
+			</tr>
+			<tr>
+				<td>Email: </td><td><input name="email"  type="email" value="<?php if(isset($email)){echo $email;}?>"></td><td><span class="red">*</span></td>
+			</tr>
+			<tr>
+				<td>Question: </td><td><textarea name="msg"><?php if(isset($message)){echo $mess;}?></textarea></td><td><span class="red">*</span></td>
+			</tr>
+			<tr>
+				<td></td><td><input id="send" name="submit" type="submit" value="Ask us"></td>
+			</tr>
+		</table>
+	</form>
+<?php
+	if(isset($_POST["submit"])){
+		$name= testInput($_POST["name"]);
+		$email= testInput($_POST["email"]);
+		$mess= testInput($_POST["msg"]);
+		// Checking For Blank Fields..
+		if($_POST["name"]==""||$_POST["email"]==""||$_POST["msg"]==""){
+			$error= "<h3 style='color:red;'>Please Fill All Required Fields..</h3>";
+		}else{
+			// Check if the "Sender's Email" input field is filled out
+			$email=$_POST['email'];
+			// Sanitize E-mail Address
+			$email =filter_var($email, FILTER_SANITIZE_EMAIL);
+			// Validate E-mail Address
+			$email= filter_var($email, FILTER_VALIDATE_EMAIL);
+		if (!$email){
+			echo "Invalid Sender's Email";
+		}
+		else{
+			$mobile= $_POST['mob'];
+			$subject = 'Request for Information from the website';
+			$message = $_POST['msg']."\r\n".'Senders contact: '.$email;
+			$headers = 'From:'. $email . "\r\n"; // Sender's Email
+			// Message lines should not exceed 70 characters (PHP rule), so wrap it
+			$message = wordwrap($message, 70);
+			// Send Mail By PHP Mail Function
+			mail("tascanham@gmail.com", $subject, $message, $headers);
+			echo "Your request for information has been recieved, we will reply by email a soon as possable";
+		  }
+		}
+	}
+?>	
+<?php if(isset($error)){echo $error;}?>   
                     </div>
-                    <div class="map-holder footer-div">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18849.95720068698!2d-8.627697962278367!3d53.80293024811451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTPCsDQ4JzEwLjUiTiA4wrAzNiczNi43Ilc!5e0!3m2!1sen!2sie!4v1517082425840" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
-                    </div>
-                    </div>
+                </div>   
                 <div class="clearfix"></div>
-            </div>    
+           
             <div class="footer-bottom">
                 <a href="<?= BASE_URL?>login" id="login_button" target="_blank">Login</a>    
                 <p>&copy;<?=date('Y');?>&nbsp;Heart of Ireland Animal Rescue</p>

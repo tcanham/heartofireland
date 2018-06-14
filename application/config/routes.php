@@ -61,5 +61,7 @@ $route['profiles'] = 'profiles';
 $route['our-animals'] = 'profiles/our_animals';
 $route['login'] = 'login';
 $route['admin'] = 'admin';
+$route['news'] = 'news';
+$route['links'] = 'admin/links';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

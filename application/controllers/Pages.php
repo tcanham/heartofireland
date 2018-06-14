@@ -207,16 +207,16 @@ class Pages extends CI_Controller {
         }       
     }     
     
-	public function donate_page(){
+	public function news_page(){
         
         $this->load->model('admin/dashboard_model');
         $this->load->model('admin/pages_model');
         $data['admin_links'] = $this->dashboard_model->get_admin_links();
         $data['page_list'] = $this->dashboard_model->get_page_list();
-        $page = 'donate-page';
-        $data['donate_data'] = $this->pages_model->get_page_for_edit($page);
+        $page = 'news-page';
+        $data['news_data'] = $this->pages_model->get_page_for_edit($page);
         $this->load->view('admin/templates/header',$data);
-        $this->load->view('admin/edit_donate_page',$data);
+        $this->load->view('admin/edit_news_page',$data);
         $this->load->view('admin/templates/footer');
 	}
     

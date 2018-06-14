@@ -8,7 +8,7 @@ class Home extends CI_Controller {
             $data['profiles'] = $this->profiles_model->get_profiles();
             $data['contact_data'] = $this->home_model->contact_page_data();
             $data['footer_links'] = $this->home_model->get_links();
-            $data['footer_donations'] = $this->dashboard_model->get_donations_section();               
+            $data['footer_donations'] = $this->dashboard_model->get_donations_section();           $data['news_items'] = $this->news_model->get_news(); 
             $data['page_title'] = 'Home';
             $this->load->view('templates/homeHeader',$data);
             $this->load->view('home',$data);

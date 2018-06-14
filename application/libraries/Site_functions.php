@@ -70,4 +70,11 @@ class Site_functions{
         return $result;
     }
     
+    //function to limit out put and add read more link
+    public function limit_output($text){
+        if (strlen($text) > 220) {
+                $text = substr($text, 0, 220);
+            }
+        return $text;
+    }
 }
