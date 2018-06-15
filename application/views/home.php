@@ -9,13 +9,13 @@
     <div id="right_bar_home">
         <h2>Our Sponsors</h2>
     </div>
-    <div id="clearfix"></div>
     <div id="news_section">
         <h2>Latest News</h2>
         <?php foreach($news_items as $item): ?>
         <?php
-            echo '<div class="news-item"><h3>'.$item['title'].'</h3><p>'.$this->site_functions->limit_output($item['text']).'... <a href="'.BASE_URL.'">Read More</a></p></div>';
+            echo '<div class="news-item"><h3>'.$item['title'].'</h3><p>'.$this->site_functions->limit_output($item['text']).'... <a href="'.BASE_URL.'news/view_news_item/'.$item['slug'].'">Read More</a></p></div>';
         ?>
         <?php endforeach; ?>
     </div>
 </div>
+<div id="clearfix"></div>

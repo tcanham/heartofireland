@@ -14,6 +14,20 @@ class News extends CI_Controller {
             $this->load->view('admin/templates/footer');
 	}
     
+        public function view_news_item($slug){
+            $data['page_title'] = 'news';
+            $this->load->model('admin/news_model');
+            $data['contact_data'] = $this->home_model->contact_page_data();   
+            $data['footer_links'] = $this->home_model->get_links();
+            $data['footer_donations'] = $this->dashboard_model->get_donations_section();  
+            $data['news_item'] = $this->news_model->get_news_item($slug);
+            $this->load->view('templates/header',$data);
+            $this->load->view('view_news_item',$data);
+            $this->load->view('templates/footer');
+	}
+    
+    
+    
     public function add_news(){
             $this->load->model('admin/dashboard_model');
             $data['admin_links'] = $this->dashboard_model->get_admin_links();

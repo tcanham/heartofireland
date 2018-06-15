@@ -55,8 +55,13 @@ textarea{
     box-sizing: border-box;  
 }
 
-.inline-block-container{
-    text-align: center;
+hr {
+   border: 0;
+   clear:both;
+   display:block;              
+   background-color:#F1C53A;
+   height: 1px;
+   margin: 5px; 
 }
 
 
@@ -178,15 +183,20 @@ textarea{
 #right_bar_home{
     float: right;
     width: 25%;
-    min-height: 100px;
     border: 1px solid #F1C53A;
     padding: 5px;
     box-sizing: border-box;
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
 #right_bar_home h2{
     text-align: center;
+}
+
+/* News items styles*/
+
+.news-item-heading{
+    margin: 10px 5px;
 }
 
 /*About page styles*/
@@ -299,6 +309,7 @@ textarea{
     background: #F1C53A;
     padding-top: 5px;  
     text-align: center;
+    margin-top: 10px;
 }
 
 .top-footer-heading {
@@ -306,15 +317,8 @@ textarea{
     font-size: 1.2em;
 }
 
-.footer_divs_outer{
-    display: inline-block;
-    width: 49%;
-    height: auto;
-    margin-left: -10px;
-}
-
 .footer-div{
-    width: 45%; 
+    width: 32%; 
     display: inline-block;
     margin: .5%;  
     vertical-align: top;
@@ -337,9 +341,6 @@ textarea{
     margin-bottom: 10px;
 }
 
-.links-holder{
-}
-
 .links-btn{
     background-color: #2BB049;
     color: #fffff0;   
@@ -355,12 +356,6 @@ textarea{
 .links-btn:hover{
     background: #fffff0;
     color: #2BB049;
-}
-
-.logo{    
-}
-
-.map-holder{   
 }
 
 .footer-bottom{
@@ -441,8 +436,10 @@ textarea{
         margin: auto;
     }
     
-    .enquiry-holder td{
-        
+    #right_bar_home{
+        float: none;
+        width: 95%;
+        margin: auto;
     }
 
     .link-text{
@@ -456,17 +453,11 @@ textarea{
         .link-holder a{
             font-size:1.5em;
     }
-     .footer_divs_outer{
-            display: block;
-            width: 90%;
-            height: auto;
-            margin: auto;
-    }
+
         .footer-div{
+            float:none;
             min-width: 90%; 
-            display: inline-block;
             margin: .5%;  
-            vertical-align: top;
     }
 }
 /*Collapsable nav media styles*/

@@ -25,10 +25,11 @@ class Home_model extends CI_Model {
             return $query->row_array();    
         }
     
-        public function donate_page_data()
+        public function news_page_data()
         {
-            $query = $this->db->get('donate-page');
-            return $query->row_array();    
+            $this->db->order_by("id", "desc");
+            $query = $this->db->get('news_items');
+            return $query->result_array();   
         }
     
         public function shop_page_data()

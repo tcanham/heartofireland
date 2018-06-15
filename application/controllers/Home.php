@@ -65,14 +65,14 @@ class Home extends CI_Controller {
             $this->load->view('templates/footer',$data);
     } 
     
-    public function donations(){
-            $data['donate_data'] = $this->home_model->donate_page_data();
+    public function news(){
+            $data['news_items'] = $this->home_model->news_page_data();
             $data['contact_data'] = $this->home_model->contact_page_data();
             $data['footer_links'] = $this->home_model->get_links();
             $data['footer_donations'] = $this->dashboard_model->get_donations_section();         
-            $data['page_title'] = 'Donate';
+            $data['page_title'] = 'News';
             $this->load->view('templates/header',$data);
-            $this->load->view('donations',$data);
+            $this->load->view('news',$data);
             $this->load->view('templates/footer',$data);
     } 
     

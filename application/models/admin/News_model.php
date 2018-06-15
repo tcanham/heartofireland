@@ -13,6 +13,11 @@ class News_model extends CI_Model {
         return $query->row_array();
     }
     
+    public function get_news_item($slug = FALSE){
+        $query = $this->db->get_where('news_items',array('slug' => $slug));
+        return $query->row_array();
+    }
+    
     //Function to add a news item to the database
     public function add_news_item($news_data){
         $slug = strtolower($news_data['title']);

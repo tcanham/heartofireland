@@ -14,7 +14,7 @@
 ?>            
 <footer> 
             <div class="footer-top"> 
-                <div class="footer_divs_outer">
+                
                     <div class="donate-button-holder footer-div">
                         <?= $footer_donations['content']; ?>
                     </div> 
@@ -23,8 +23,8 @@
                         <a href="<?= $link['link'];?>" target="_blank"><button class="links-btn"><?= $link['title'];?></button></a>
                         <?php endforeach; ?>
                     </div>
-                </div>  
-                <div class="footer_divs_outer">
+                 
+
                     <div class="enquiry-holder footer-div">
                         <h3>Need some advice </h3>
                         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
@@ -85,6 +85,5 @@
                 <p>&copy;<?=date('Y');?>&nbsp;Heart of Ireland Animal Rescue</p>
             </div>
         </footer>
-    </div>
 </body>
 </html>
