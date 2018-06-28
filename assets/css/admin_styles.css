@@ -5,6 +5,10 @@
 .top-button{
     float: right;
 }
+.red{
+    color:red;
+}
+
 input[type=text],input[type=password],input[type=number]{
     background-color: #F1C53A;
     color: #808080;

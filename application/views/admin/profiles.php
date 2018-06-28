@@ -26,7 +26,8 @@
             <table class="table table-responsive">
                 <thead>
                     <tr>                      
-                      <th scope="col">Id</th>                          
+                      <th scope="col">Id</th>
+                      <th scope="col">Category</th>
                       <th scope="col">Name</th>
                       <th scope="col">Me</th>                        
                       <th scope="col">Created/updated</th>
@@ -35,8 +36,7 @@
                   <tbody>
                       <?php foreach($profiles as $profile):?>
                       <?php echo
-                      '<tr><td>'.$profile["id"].'</td>'.
-                      '<td>'.$profile["title"].'</td><td>';
+                      '<tr><td>'.$profile["id"].'</td><td>'.$profile["category"].'</td><td>'.$profile["title"].'</td><td>';
                         if ($profile["image"] != ''){
                             echo '<img src='.BASE_URL.'assets/uploads/profile_images/'.$profile["image"].'>';
                         }

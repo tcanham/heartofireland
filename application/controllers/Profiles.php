@@ -28,6 +28,7 @@ class Profiles extends CI_Controller {
     public function save_profile(){
         
         $this->form_validation->set_rules('name', 'Name', 'required');
+        $this->form_validation->set_rules('category', 'Category', 'required');
         $this->form_validation->set_rules('add_profile_text', 'Add profile text', 'required');
         if ($this->form_validation->run() == FALSE){
             $this->load->model('admin/dashboard_model');
@@ -40,7 +41,8 @@ class Profiles extends CI_Controller {
         }else{
             $name = $this->security->xss_clean($this->input->post('name'));
             $text = $this->security->xss_clean($this->input->post('add_profile_text'));
-
+            $category = $this->security->xss_clean($this->input->post('category'));
+            
             //Function to upload the image
             $image_upload = $this->site_functions->profile_image_upload();
             //Get the image name for the database
@@ -55,13 +57,13 @@ class Profiles extends CI_Controller {
         
         //Send to the database
         if($check == TRUE){
-        $profile_data = array("name"=>$name,"text"=>$text,"image"=>$image_name);
+        $profile_data = array("name"=>$name,"category"=>$category,"text"=>$text,"image"=>$image_name);
         $this->load->model('profiles_model');
         $this->profiles_model->add_profile($profile_data);
         header('Location:' . BASE_URL . 'profiles');
         }
-     }
-    
+        
+    }
     public function view_profile($slug = null){
         $this->load->model('profiles_model');
         $data['profile'] = $this->profiles_model->get_profiles($slug);
@@ -104,6 +106,7 @@ class Profiles extends CI_Controller {
         $data['profile'] = $this->profiles_model->get_profiles($slug);
         $this->form_validation->set_rules('id', 'Id', 'required');
         $this->form_validation->set_rules('name', 'Name', 'required');
+        $this->form_validation->set_rules('category', 'Category', 'required');
         $this->form_validation->set_rules('add_profile_text', 'Add profile text', 'required');
         if ($this->form_validation->run() == FALSE){
             $this->load->model('admin/dashboard_model');
@@ -115,6 +118,7 @@ class Profiles extends CI_Controller {
         }else{
             $id = $this->security->xss_clean($this->input->post('id'));
             $name = $this->security->xss_clean($this->input->post('name'));
+            $category = $this->security->xss_clean($this->input->post('category'));
             $text = $this->security->xss_clean($this->input->post('add_profile_text'));
 
             //Function to upload the image
@@ -131,7 +135,7 @@ class Profiles extends CI_Controller {
         
         //Send to the database
         if($check == TRUE){
-        $profile_data = array("id"=>$id,"name"=>$name,"text"=>$text,"image"=>$image_name);
+        $profile_data = array("id"=>$id,"name"=>$name,"category"=>$category,"text"=>$text,"image"=>$image_name);
         $this->load->model('profiles_model');
         $this->profiles_model->update_profile($profile_data);
         header('Location:' . BASE_URL . 'profiles');
@@ -169,5 +173,5 @@ class Profiles extends CI_Controller {
         $this->load->view('templates/footer',$data);   
     }
         
-    
+ 
 }// End of class

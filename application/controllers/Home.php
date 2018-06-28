@@ -87,4 +87,14 @@ class Home extends CI_Controller {
             $this->load->view('templates/footer',$data);
     } 
     
+        public function gallery(){
+            $data['contact_data'] = $this->home_model->contact_page_data();
+            $data['footer_links'] = $this->home_model->get_links();
+            $data['footer_donations'] = $this->dashboard_model->get_donations_section(); 
+            $data['page_title'] = 'Gallery';
+            $this->load->view('templates/header',$data);
+            $this->load->view('gallery',$data);
+            $this->load->view('templates/footer',$data);
+    } 
+    
 }

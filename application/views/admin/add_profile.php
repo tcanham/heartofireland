@@ -29,6 +29,16 @@
                             <td>Name:&nbsp;</td><td><input type="text"name="name" id="name"value="<?php echo set_value('name'); ?>"></td>
                         </tr>
                         <tr>
+                            <td>Category:&nbsp;</td>
+                            <td>
+                                <select name="category" id="category">
+                                    <option name="other">Other</option>
+                                    <option name="dog">Dog</option>
+                                    <option name="cat">Cat</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
                             <td>Image:&nbsp;</td><td><input type="file" name="fileToUpload" id="fileToUpload"></td>
                         </tr>  
                             <td></td><td><textarea name="add_profile_text" id="add_profile_text"><?php echo set_value('add_profile_text'); ?></textarea></td>

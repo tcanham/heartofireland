@@ -21,14 +21,22 @@
         </div>
         <div class="clearfix"></div>
         <div class="topnav" id="myTopnav">
-            <a href="<?= BASE_URL ?>">Home</a>
-            <a href="<?= BASE_URL ?>about">About Us</a>
-            <a href="<?= BASE_URL ?>our-animals">Our Animals</a>
-            <a href="<?= BASE_URL ?>welfare">Animal Welfare</a>
-            <a href="<?= BASE_URL ?>info">Information</a>    
-            <a href="<?= BASE_URL ?>shop">Items for Sale</a>    
-            <a href="<?= BASE_URL ?>contact">Contact</a>
-            <a href="<?= BASE_URL ?>news">News</a>
+            <a class="top-link" href="<?= BASE_URL ?>">Home</a>
             <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+            <a class="top-link" href="<?= BASE_URL ?>about">About Us</a>
+                    <div class="dropdown">
+                      <a class="top-link">Our Animals</a>
+                      <div class="dropdown-content">
+                        <a class="drop-link"href="<?= BASE_URL ?>">All</a>  
+                        <a class="drop-link"href="<?= BASE_URL ?>">Dogs</a>
+                        <a class="drop-link"href="<?= BASE_URL ?>">Cats</a> 
+                      </div>
+                    </div>  
+            <a class="top-link" href="<?= BASE_URL ?>welfare">Animal Welfare</a>
+            <a class="top-link" href="<?= BASE_URL ?>info">Information</a>    
+            <a class="top-link" href="<?= BASE_URL ?>shop">Items for Sale</a>    
+            <a class="top-link" href="<?= BASE_URL ?>contact">Contact</a>  
+            <a class="top-link" href="<?= BASE_URL ?>news">News</a>
+            <a class="top-link" href="<?= BASE_URL ?>gallery">gallery</a>
         </div>
     </header>

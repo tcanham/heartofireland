@@ -22,6 +22,7 @@
         </nav>
         <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
           <h1>Edit <?php echo $profile['title'] ?></h1>
+            <p class="red">When editing a profile it is neccesary to re-upload an image and re-enter the category!</p>
                 <form action="<?= BASE_URL?>profiles/update_profile/<?= $profile['slug']?>" method="post" enctype="multipart/form-data">
                     <div class="error-box"><?php echo validation_errors(); ?></div>
                     <table>
@@ -30,6 +31,16 @@
                         </tr>                        
                         <tr>
                             <td>Name:&nbsp;</td><td><input type="text"name="name" id="name"value="<?php echo $profile['title']; ?>"></td>
+                        </tr>
+                        <tr>
+                            <td>Category:&nbsp;</td>
+                            <td>
+                                <select name="category" id="category">
+                                    <option name="other">Other</option>
+                                    <option name="dog">Dog</option>
+                                    <option name="cat">Cat</option>
+                                </select>
+                            </td>
                         </tr>
                         <tr>
                             <td>Image:&nbsp;</td><td><input type="file" name="fileToUpload" id="fileToUpload"></td>

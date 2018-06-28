@@ -57,6 +57,7 @@ $route['welfare'] = 'home/welfare';
 $route['info'] = 'home/info';
 $route['donations'] = 'home/donations';
 $route['shop'] = 'home/shop';
+$route['gallery'] = 'home/gallery';
 $route['profiles'] = 'profiles';
 $route['our-animals'] = 'profiles/our_animals';
 $route['login'] = 'login';

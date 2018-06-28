@@ -26,6 +26,7 @@ class Profiles_model extends CI_Model {
         'slug'  => $slug,   
         'text'  => $profile_data['text'],
         'image' => $profile_data['image'],
+        'category' => $profile_data['category'],   
         );
 
         $this->db->insert('profiles', $data);
@@ -39,6 +40,7 @@ class Profiles_model extends CI_Model {
         'slug'  => $slug,   
         'text'  => $profile_data['text'],
         'image' => $profile_data['image'],
+        'category' => $profile_data['category'],   
         );
 
         $this->db->where('id',$profile_data['id']);
